@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>User</author>
+      <authoring_tool>Adobe Photoshop</authoring_tool>
+      <comments>1</comments>
+    </contributor>
+    <created>2018-04-07T20:12:43Z</created>
+    <modified>2018-04-07T20:12:43Z</modified>
+    <unit meter="0.001" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera1" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <yfov>45.1552</yfov>
+            <aspect_ratio>1</aspect_ratio>
+            <znear>1</znear>
+            <zfar>1000</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+    </camera>
+    <camera id="Default_Camera1" name="Default_Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <yfov>25.3998</yfov>
+            <aspect_ratio>1.77778</aspect_ratio>
+            <znear>1</znear>
+            <zfar>1000</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Infinite_Light_2" name="Infinite_Light_1">
+      <technique_common>
+        <directional>
+          <color>1 1 1</color>
+        </directional>
+      </technique_common>
+      <extra>
+        <technique profile="MAX3D">
+          <aspect_ratio>1</aspect_ratio>
+          <overshoot>1</overshoot>
+          <decay_type>0</decay_type>
+          <decay_start>10</decay_start>
+          <use_near_attenuation>1</use_near_attenuation>
+          <use_far_attenuation>1</use_far_attenuation>
+          <near_attenuation_start>1</near_attenuation_start>
+          <near_attenuation_end>2</near_attenuation_end>
+          <far_attenuation_start>5</far_attenuation_start>
+          <far_attenuation_end>10</far_attenuation_end>
+        </technique>
+        <technique profile="FCOLLADA">
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+          <falloff_angle>5</falloff_angle>
+          <falloff_exponent>1</falloff_exponent>
+          <intensity>0.9</intensity>
+          <outer_cone>5</outer_cone>
+        </technique>
+      </extra>
+    </light>
+    <light id="Image_Based_Light_2" name="Image_Based_Light_1">
+      <technique_common>
+        <directional>
+          <color>0.1 0.1 0.1</color>
+        </directional>
+      </technique_common>
+      <extra>
+        <technique profile="FCOLLADA">
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+          <falloff_angle>5</falloff_angle>
+          <falloff_exponent>1</falloff_exponent>
+          <intensity>1</intensity>
+          <outer_cone>5</outer_cone>
+        </technique>
+      </extra>
+      <extra type="adobe_light_type">
+        <technique profile="ADOBE">
+          <type>
+            <imageBased>1</imageBased>
+          </type>
+        </technique>
+      </extra>
+    </light>
+    <light id="global_ambient_light-object" name="global_ambient_light">
+      <technique_common>
+        <ambient>
+          <color>1 1 1</color>
+        </ambient>
+      </technique_common>
+      <extra>
+        <technique profile="FCOLLADA">
+          <intensity>1</intensity>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images>
+    <image id="temp0.png">
+      <init_from>./temp0.png</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="temp1.png">
+      <init_from>./temp1.png</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="temp2.png">
+      <init_from>./temp2.png</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="temp3.png">
+      <init_from>./temp3.png</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+    <image id="temp4.png">
+      <init_from>./temp4.png</init_from>
+      <extra>
+        <technique profile="MAYA">
+          <dgnode_type>kFile</dgnode_type>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="temp0_png" name="temp0_png">
+      <instance_effect url="#temp0_png-fx"/>
+    </material>
+    <material id="temp1_png" name="temp1_png">
+      <instance_effect url="#temp1_png-fx"/>
+    </material>
+    <material id="temp2_png" name="temp2_png">
+      <instance_effect url="#temp2_png-fx"/>
+    </material>
+    <material id="temp3_png" name="temp3_png">
+      <instance_effect url="#temp3_png-fx"/>
+    </material>
+    <material id="temp4_png" name="temp4_png">
+      <instance_effect url="#temp4_png-fx"/>
+    </material>
+    <material id="Ground_Plane_Material" name="Ground_Plane_Material">
+      <instance_effect url="#Ground_Plane_Material-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="temp0_png-fx" name="temp0_png">
+      <profile_COMMON>
+        <newparam sid="temp0_png-surface">
+          <surface type="2D">
+            <init_from>temp0.png</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="temp0_png-sampler">
+          <sampler2D>
+            <source>temp0_png-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="temp0_png-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.898039 0.898039 0.898039 1</color>
+            </specular>
+            <shininess>
+              <float>0.2</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.588235 0.588235 0.588235</diffuse_color>
+              <specular_color>0.898039 0.898039 0.898039</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0.2</shininess>
+              <roughness>0</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="temp1_png-fx" name="temp1_png">
+      <profile_COMMON>
+        <newparam sid="temp1_png-surface">
+          <surface type="2D">
+            <init_from>temp1.png</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="temp1_png-sampler">
+          <sampler2D>
+            <source>temp1_png-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="temp1_png-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.898039 0.898039 0.898039 1</color>
+            </specular>
+            <shininess>
+              <float>0.2</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.588235 0.588235 0.588235</diffuse_color>
+              <specular_color>0.898039 0.898039 0.898039</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0.2</shininess>
+              <roughness>0</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="temp2_png-fx" name="temp2_png">
+      <profile_COMMON>
+        <newparam sid="temp2_png-surface">
+          <surface type="2D">
+            <init_from>temp2.png</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="temp2_png-sampler">
+          <sampler2D>
+            <source>temp2_png-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="temp2_png-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.898039 0.898039 0.898039 1</color>
+            </specular>
+            <shininess>
+              <float>0.2</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.588235 0.588235 0.588235</diffuse_color>
+              <specular_color>0.898039 0.898039 0.898039</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0.2</shininess>
+              <roughness>0</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="temp3_png-fx" name="temp3_png">
+      <profile_COMMON>
+        <newparam sid="temp3_png-surface">
+          <surface type="2D">
+            <init_from>temp3.png</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="temp3_png-sampler">
+          <sampler2D>
+            <source>temp3_png-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="temp3_png-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.898039 0.898039 0.898039 1</color>
+            </specular>
+            <shininess>
+              <float>0.2</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.588235 0.588235 0.588235</diffuse_color>
+              <specular_color>0.898039 0.898039 0.898039</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0.2</shininess>
+              <roughness>0</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="temp4_png-fx" name="temp4_png">
+      <profile_COMMON>
+        <newparam sid="temp4_png-surface">
+          <surface type="2D">
+            <init_from>temp4.png</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="temp4_png-sampler">
+          <sampler2D>
+            <source>temp4_png-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="temp4_png-sampler" texcoord="UVSET0">
+                <extra>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+                <extra type="texture_offset">
+                  <technique profile="ADOBE">
+                    <offsets>
+                      <offsetu>0</offsetu>
+                      <offsetv>0</offsetv>
+                      <scaleu>1</scaleu>
+                      <scalev>1</scalev>
+                      <angle>0</angle>
+                    </offsets>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.898039 0.898039 0.898039 1</color>
+            </specular>
+            <shininess>
+              <float>0.2</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0.588235 0.588235 0.588235</diffuse_color>
+              <specular_color>0.898039 0.898039 0.898039</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0.2</shininess>
+              <roughness>0</roughness>
+            </colors>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Ground_Plane_Material-fx" name="Ground_Plane_Material">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <color>0 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0.2</float>
+            </shininess>
+            <reflective>
+              <color>1 1 1 1</color>
+            </reflective>
+            <reflectivity>
+              <float>0</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>0.6</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA"/>
+          </extra>
+        </technique>
+        <extra type="material_overlay">
+          <technique profile="ADOBE">
+            <colors>
+              <diffuse_color>0 0 0</diffuse_color>
+              <specular_color>1 1 1</specular_color>
+              <reflectivity_factor>0</reflectivity_factor>
+              <shininess>0.2</shininess>
+              <roughness>0</roughness>
+            </colors>
+          </technique>
+        </extra>
+        <extra type="adobe_gp_material">
+          <technique profile="ADOBE">
+            <gp_material>
+              <is_gp_material>1</is_gp_material>
+            </gp_material>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>1</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="temp1" name="temp0">
+      <mesh>
+        <source id="temp1-positions">
+          <float_array id="temp1-positions-array" count="12">-10517 -751.691 -1.72712 -42314.6 -751.691 -1.72712 -10517 -3050.24 -1.72712 -42314.6 -3050.24 -1.72712</float_array>
+          <technique_common>
+            <accessor source="#temp1-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp1-normals">
+          <float_array id="temp1-normals-array" count="12">0 0 0.998312 0 0 0.998312 0 0 0.998312 0 0 0.998312</float_array>
+          <technique_common>
+            <accessor source="#temp1-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp1-texcoords">
+          <float_array id="temp1-texcoords-array" count="8">0 0 1 0 0 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#temp1-texcoords-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="temp1-vertices">
+          <input semantic="POSITION" source="#temp1-positions"/>
+        </vertices>
+        <triangles material="temp0_png" count="2">
+          <input semantic="VERTEX" source="#temp1-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#temp1-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#temp1-texcoords" offset="0"/>
+          <p>0 1 2 3 2 1</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="temp3" name="temp1">
+      <mesh>
+        <source id="temp3-positions">
+          <float_array id="temp3-positions-array" count="12">-42314.6 -748.791 2053.69 -42314.6 -3048.26 2053.69 -42314.6 -748.791 -1.72712 -42314.6 -3048.26 -1.72712</float_array>
+          <technique_common>
+            <accessor source="#temp3-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp3-normals">
+          <float_array id="temp3-normals-array" count="12">1 0 0 0.998312 0 0 0.998312 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#temp3-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp3-texcoords">
+          <float_array id="temp3-texcoords-array" count="8">1 0 1 1 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#temp3-texcoords-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="temp3-vertices">
+          <input semantic="POSITION" source="#temp3-positions"/>
+        </vertices>
+        <triangles material="temp1_png" count="2">
+          <input semantic="VERTEX" source="#temp3-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#temp3-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#temp3-texcoords" offset="0"/>
+          <p>0 1 2 3 2 1</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="temp5" name="temp2">
+      <mesh>
+        <source id="temp5-positions">
+          <float_array id="temp5-positions-array" count="12">-11274.3 -2971.82 2053.36 -42314.6 -725.84 2053.69 -11274.3 -725.84 2053.36 -42314.6 -2971.82 2053.69</float_array>
+          <technique_common>
+            <accessor source="#temp5-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp5-normals">
+          <float_array id="temp5-normals-array" count="12">-0.00001 0 -0.998312 -0.00001 0 -0.998312 -0.00001 0 -0.998312 -0.00001 0 -0.998312</float_array>
+          <technique_common>
+            <accessor source="#temp5-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp5-texcoords">
+          <float_array id="temp5-texcoords-array" count="8">1 1 0 0 1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#temp5-texcoords-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="temp5-vertices">
+          <input semantic="POSITION" source="#temp5-positions"/>
+        </vertices>
+        <triangles material="temp2_png" count="2">
+          <input semantic="VERTEX" source="#temp5-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#temp5-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#temp5-texcoords" offset="0"/>
+          <p>0 1 2 1 0 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="temp7" name="temp3">
+      <mesh>
+        <source id="temp7-positions">
+          <float_array id="temp7-positions-array" count="12">-12440.6 -3044.96 2115.05 -12440.6 -3044.96 -1.72541 -42314.6 -3048.26 2115.05 -42314.6 -3048.26 -1.72712</float_array>
+          <technique_common>
+            <accessor source="#temp7-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp7-normals">
+          <float_array id="temp7-normals-array" count="12">-0.00011 0.998312 0 -0.00011 0.998312 0 -0.00011 0.998312 0 -0.00011 0.998312 0</float_array>
+          <technique_common>
+            <accessor source="#temp7-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp7-texcoords">
+          <float_array id="temp7-texcoords-array" count="8">1 1 0 1 1 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#temp7-texcoords-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="temp7-vertices">
+          <input semantic="POSITION" source="#temp7-positions"/>
+        </vertices>
+        <triangles material="temp3_png" count="2">
+          <input semantic="VERTEX" source="#temp7-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#temp7-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#temp7-texcoords" offset="0"/>
+          <p>0 1 2 3 2 1</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="temp9" name="temp4">
+      <mesh>
+        <source id="temp9-positions">
+          <float_array id="temp9-positions-array" count="12">-42314.6 -748.791 2015.09 -11726.6 -745.409 -4.33631 -11726.6 -745.409 2015.1 -42314.6 -748.791 -4.33806</float_array>
+          <technique_common>
+            <accessor source="#temp9-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp9-normals">
+          <float_array id="temp9-normals-array" count="12">0.00011 -0.998312 0 0.00011 -0.998312 0 0.00011 -0.998312 0 0.00011 -0.998312 0</float_array>
+          <technique_common>
+            <accessor source="#temp9-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="temp9-texcoords">
+          <float_array id="temp9-texcoords-array" count="8">1 1 0 0 1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#temp9-texcoords-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="temp9-vertices">
+          <input semantic="POSITION" source="#temp9-positions"/>
+        </vertices>
+        <triangles material="temp4_png" count="2">
+          <input semantic="VERTEX" source="#temp9-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#temp9-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#temp9-texcoords" offset="0"/>
+          <p>0 1 2 1 0 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="temp0" name="temp0" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#temp1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="temp0_png" target="#temp0_png"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <node id="temp2" name="temp1" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#temp3">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="temp1_png" target="#temp1_png"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <node id="temp4" name="temp2" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#temp5">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="temp2_png" target="#temp2_png"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <node id="temp6" name="temp3" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#temp7">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="temp3_png" target="#temp3_png"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <node id="temp8" name="temp4" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#temp9">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="temp4_png" target="#temp4_png"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra type="pivot_use">
+          <technique profile="ADOBE">
+            <use_pivot>
+              <needPivot>0</needPivot>
+            </use_pivot>
+          </technique>
+        </extra>
+      </node>
+      <node id="Infinite_Light_1" name="Infinite_Light_1" type="NODE">
+        <lookat>0 0 0 -0.074379 0.799776 -0.592834 0 1 0</lookat>
+        <instance_light url="#Infinite_Light_2"/>
+      </node>
+      <node id="Image_Based_Light_1" name="Image_Based_Light_1" type="NODE">
+        <instance_light url="#Image_Based_Light_2"/>
+      </node>
+      <node id="global_ambient_light" name="global_ambient_light" type="NODE">
+        <instance_light url="#global_ambient_light-object"/>
+      </node>
+      <node id="Camera" name="Camera" type="NODE">
+        <lookat>-8952.38 -47.6832 869.009 -45267.9 -3902.1 -1.72712 0.994132 0.105514 0.023836</lookat>
+        <instance_camera url="#Camera1"/>
+      </node>
+      <node id="Default_Camera" name="Default_Camera" type="NODE">
+        <lookat>-8952.38 -47.6832 869.009 -8957.07 -48.1802 868.897 0 0 1</lookat>
+        <instance_camera url="#Default_Camera1"/>
+      </node>
+      <extra type="render_settings">
+        <technique profile="ADOBE">
+          <faces>
+            <render_faces>1</render_faces>
+            <face_style>32</face_style>
+            <face_color>1 1 1</face_color>
+            <texture_type>0</texture_type>
+            <anti_alias_quality>1</anti_alias_quality>
+            <show_reflections>1</show_reflections>
+            <show_refractions>1</show_refractions>
+            <show_shadows>1</show_shadows>
+            <remove_backfaces>0</remove_backfaces>
+          </faces>
+          <edges>
+            <render_edges>0</render_edges>
+            <line_style>1</line_style>
+            <line_color>0 0 0</line_color>
+            <line_width>1</line_width>
+            <crease_value>0</crease_value>
+            <remove_backface_lines>0</remove_backface_lines>
+            <remove_hidden_lines>1</remove_hidden_lines>
+          </edges>
+          <vertices>
+            <render_vertices>0</render_vertices>
+            <vertex_style>1</vertex_style>
+            <vertex_color>0 0 0</vertex_color>
+            <vertex_radius>1</vertex_radius>
+            <remove_backface_vertices>1</remove_backface_vertices>
+            <remove_hidden_vertices>1</remove_hidden_vertices>
+          </vertices>
+          <volumes>
+            <render_volume>0</render_volume>
+            <volume_style>2097152</volume_style>
+            <transfer_function0/>
+            <transfer_function1/>
+            <transfer_function2/>
+            <transfer_function3/>
+            <gradient_enhancement>1</gradient_enhancement>
+            <opacity_scale>1</opacity_scale>
+          </volumes>
+          <stereo>
+            <render_stereo>0</render_stereo>
+            <stereo_style>16384</stereo_style>
+            <stereo_offset>5</stereo_offset>
+            <stereo_line_spacing>40</stereo_line_spacing>
+          </stereo>
+          <internal>
+            <projection>0</projection>
+            <blend_unlit>0</blend_unlit>
+          </internal>
+        </technique>
+      </extra>
+      <extra type="background_image_type">
+        <technique profile="ADOBE">
+          <type>
+            <image_type>0</image_type>
+          </type>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
