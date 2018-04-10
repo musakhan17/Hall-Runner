@@ -3,8 +3,11 @@ guid: 4e32191c8d2c8d249b907c930b0fb0f8
 timeCreated: 1472530203
 licenseType: Store
 NativeFormatImporter:
+<<<<<<< HEAD
   externalObjects: {}
   mainObjectFileID: 0
+=======
+>>>>>>> master
   userData: 
   assetBundleName: 
   assetBundleVariant: 
