@@ -719,13 +719,13 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
-  XboxOneXTitleMemory: 8
   xboxOneScriptCompiler: 0
   vrEditorSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+<<<<<<< refs/remotes/origin/master
     Analytics: 0
     Build: 0
     Collab: 0
@@ -735,11 +735,15 @@ PlayerSettings:
     Purchasing: 0
     UNet: 0
     Unity_Ads: 0
+=======
+    Collab: 1
+    UNet: 1
+>>>>>>> Assets Improvised
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 53cb7658-b3be-4f96-9484-a29542876498
+  projectName: CS322HallRunner
+  organizationId: lydia-amazing-game-company
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
