@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f8f60cb4f1d519842922583a425e8e95
 folderAsset: yes
 timeCreated: 1523286190
+=======
+guid: a814225a23b89cb42a40195a45cfcd3a
+folderAsset: yes
+timeCreated: 1523208624
+>>>>>>> Lydia_Branch
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2017.4.0f1
 =======
 m_EditorVersion: 2017.4.1f1
+>>>>>>> Lydia_Branch
+=======
+<<<<<<< refs/remotes/origin/master
+<<<<<<< refs/remotes/origin/master
+m_EditorVersion: 2017.4.1f1
+=======
+m_EditorVersion: 2017.3.1f1
+>>>>>>> Assets Imported
+=======
+m_EditorVersion: 2017.4.1f1
+>>>>>>> Assets Improvised
 >>>>>>> Lydia_Branch
