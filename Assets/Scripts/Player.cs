@@ -21,25 +21,25 @@ public class Player : MonoBehaviour
     {
         if (!collision)
         {
-            MoveForward();
+            GetComponent<Rigidbody>().velocity = direction * speed;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                transform.Translate(Vector3.up * 5 * Time.deltaTime);
+            }
+            //GetComponent<Rigidbody>().AddForce(direction * speed);
+            //transform.Translate(direction * speed * Time.deltaTime);
+            //progress += speed * Time.deltaTime;
         }
-        //GetComponent<Rigidbody>().velocity = direction * speed;
     }
 
-    private void MoveForward()
-    {
-        GetComponent<Rigidbody>().velocity = direction * speed;
-        //transform.Translate(direction * speed * Time.deltaTime);
-        //progress += speed * Time.deltaTime;
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Obstacle")
         {
-            Debug.Log("here");
             //GetComponent<Rigidbody>().velocity = direction * speed;
             GetComponent<Rigidbody>().freezeRotation = false;
             collision = true;
+            Debug.Log("Player collided");
         }
 
     }

@@ -118,10 +118,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4701524715786640}
-  - component: {fileID: 54206440266660560}
-  - component: {fileID: 114930258212794798}
   m_Layer: 0
-  m_Name: GrandfatherClock
+  m_Name: GrandfatherClock 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +151,8 @@ GameObject:
   - component: {fileID: 33802259858616704}
   - component: {fileID: 65324811592546816}
   - component: {fileID: 23767680988132664}
+  - component: {fileID: 54801573078647798}
+  - component: {fileID: 114708986365245392}
   - component: {fileID: 65953497301028554}
   m_Layer: 0
   m_Name: Cube
@@ -221,14 +221,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767685590116220}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.323, y: 0, z: 9.932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4785151910267136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4708951481414738
 Transform:
   m_ObjectHideFlags: 1
@@ -264,9 +264,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928582033181076}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2600003, y: 1, z: 0.13399991}
-  m_LocalScale: {x: 0.5200007, y: 2, z: 0.27000037}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.13399994, y: 1, z: 0.26000023}
+  m_LocalScale: {x: 0.5200002, y: 2, z: 0.27000013}
   m_Children:
   - {fileID: 4737707204281744}
   m_Father: {fileID: 4701524715786640}
@@ -492,12 +492,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134129261812530}
   m_Mesh: {fileID: 4300004, guid: 3da57b887e4888947839b3313e880f28, type: 3}
---- !u!54 &54206440266660560
+--- !u!54 &54801573078647798
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1767685590116220}
+  m_GameObject: {fileID: 1928582033181076}
   serializedVersion: 2
   m_Mass: 20
   m_Drag: 0
@@ -545,12 +545,12 @@ MonoBehaviour:
   minutes: 0
   hour: 0
   clockSpeed: 1
---- !u!114 &114930258212794798
+--- !u!114 &114708986365245392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1767685590116220}
+  m_GameObject: {fileID: 1928582033181076}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b0419f083ba3a843a36a02b18cd18d8, type: 3}
@@ -558,4 +558,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerDistance: 8
   player: {fileID: 0}
-  isObstacle: 0

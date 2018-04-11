@@ -7,7 +7,8 @@ TagManager:
   - FxTemporaire
   - projectile
   - Obstacle
-  - ObstacleSpawn
+  - FurnitureSpawn
+  - FireSpawn
   layers:
   - Default
   - TransparentFX
