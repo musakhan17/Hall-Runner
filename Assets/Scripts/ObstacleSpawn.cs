@@ -8,6 +8,8 @@ public class ObstacleSpawn : MonoBehaviour
     [SerializeField]
     private GameObject[] _obstacles;
     [SerializeField]
+    private GameObject _fire;
+    [SerializeField]
     private float _fireFrequency = 0.05f; //chance of spawning fire @ a spawn point
     [SerializeField]
     private float _furnitureFrequency = 0.5f; //chance of spawning an object @ a spawn point
@@ -27,7 +29,7 @@ public class ObstacleSpawn : MonoBehaviour
                 _furnitureSpawnPoints.Add(child.gameObject);
             } else if (child.tag == "FireSpawn")
             {
-                _fireSpawnPoints = new List<GameObject>();
+                _fireSpawnPoints.Add(child.gameObject);
             }
         }
 
@@ -68,6 +70,24 @@ public class ObstacleSpawn : MonoBehaviour
                     hallObstacle.isObstacle = Random.Range(0f, 1f) < _furnitureIsObstacleFrequency
                                               ? true : false;
                 }
+            }
+        }
+
+        //generate fire obstacles
+        foreach (GameObject location in _fireSpawnPoints)
+        {
+            if (Random.Range(0f, 1f) < _fireFrequency)
+            {
+                //pick side of hallway to spawn on
+                string side = RandomSide();
+                Transform spawnPoint = location.transform.Find(side);
+                Debug.Log("fire");
+
+                //instantiate
+                GameObject newObject = Instantiate(_fire,
+                                                     spawnPoint.position,
+                                                     Quaternion.identity
+                                                    );
             }
         }
 
