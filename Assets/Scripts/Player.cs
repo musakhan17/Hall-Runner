@@ -6,8 +6,9 @@ public class Player : MonoBehaviour
 {
 
     public float speed = 5.0f;
-
+    public GameObject camera;
     public Vector3 direction = Vector3.forward;
+
 
     private float progress = 0;
     private bool collision = false;
@@ -21,7 +22,20 @@ public class Player : MonoBehaviour
     {
         if (!collision)
         {
-            GetComponent<Rigidbody>().velocity = direction * speed;
+            //GetComponent<Rigidbody>().velocity = direction * speed;
+            direction = camera.transform.forward;
+            direction.y = 0;
+            transform.Translate(direction * speed * Time.deltaTime);
+
+            if (Input.GetKey("c"))
+            { // press C to crouch
+                transform.localScale = new Vector3(1, 0.5f, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+
+            }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 transform.Translate(Vector3.up * 5 * Time.deltaTime);
