@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4897146515818838}
   - component: {fileID: 198402390800162378}
   - component: {fileID: 199406615196422632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Ghost_FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4784212372133570}
   - component: {fileID: 135713761323150140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

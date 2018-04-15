@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4831997162937894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rotation_axis_pointer_seconds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,9 +36,9 @@ GameObject:
   - component: {fileID: 4378521334656144}
   - component: {fileID: 33587785674648282}
   - component: {fileID: 23576655584704194}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: clock
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4090677919136086}
   - component: {fileID: 33489800046136296}
   - component: {fileID: 23853716011089136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pointer_hour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4095330594866930}
   - component: {fileID: 33955231236167814}
   - component: {fileID: 23100312947922080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pointer_minutes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4222980066741972}
   - component: {fileID: 33039392275385626}
   - component: {fileID: 23929452754376344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pointer_seconds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4701524715786640}
   - component: {fileID: 114930258212794798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GrandfatherClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4253625345010162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rotation_axis_pointer_hour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4152924525034356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rotation_axis_pointer_minutes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 65324811592546816}
   - component: {fileID: 23767680988132664}
   - component: {fileID: 65953497301028554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767685590116220}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.46, y: 0, z: 13.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -256,7 +256,7 @@ Transform:
   - {fileID: 4378521334656144}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4785151910267136
 Transform:
   m_ObjectHideFlags: 1

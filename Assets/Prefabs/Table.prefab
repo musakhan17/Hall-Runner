@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4540683832040058}
   - component: {fileID: 54087854822358146}
   - component: {fileID: 114320170690922538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4720012591756742}
   - component: {fileID: 33337265353427142}
   - component: {fileID: 23663311859158828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4733442343020868}
   - component: {fileID: 65890660255193848}
   - component: {fileID: 65905659712503046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: kitchen_table_2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4856618552290228}
   - component: {fileID: 33344894539433400}
   - component: {fileID: 23621760254640112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}

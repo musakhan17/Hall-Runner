@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     public Vector3 direction = Vector3.forward;
 
 
-    private float progress = 0;
-    private bool collision = false;
+    private float _progress = 0;
+    private bool _collision = false;
     void Start()
     {
         GetComponent<Rigidbody>().freezeRotation = true;
@@ -20,12 +20,15 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!collision)
+        if (!_collision)
         {
             //GetComponent<Rigidbody>().velocity = direction * speed;
             direction = camera.transform.forward;
             direction.y = 0;
+            Vector3 startPos = transform.position;
             transform.Translate(direction * speed * Time.deltaTime);
+            Vector3 endPos = transform.position;
+            _progress += Vector3.Distance(endPos, startPos);
 
             if (Input.GetKey("c"))
             { // press C to crouch
@@ -46,13 +49,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    public float GetProgress()
+    {
+        return _progress;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Obstacle")
         {
             //GetComponent<Rigidbody>().velocity = direction * speed;
             GetComponent<Rigidbody>().freezeRotation = false;
-            collision = true;
+            _collision = true;
             Debug.Log("Player collided");
         }
 
