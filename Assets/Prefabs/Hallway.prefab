@@ -7238,6 +7238,6 @@ MonoBehaviour:
   - {fileID: 1767685590116220, guid: 2e4490b7c8c41be44befe64020e00c14, type: 2}
   - {fileID: 1512419476674420, guid: f9c3d731dfea7ea4db3560dfea30de5e, type: 2}
   _fire: {fileID: 1965172163217082, guid: 448eccf486d20ac4ea80d9482ca0620a, type: 2}
-  _fireFrequency: 0.5
-  _furnitureFrequency: 1
-  _furnitureIsObstacleFrequency: 0.2
+  _fireFrequency: 0.2
+  _furnitureFrequency: 0.5
+  _furnitureIsObstacleFrequency: 0.1

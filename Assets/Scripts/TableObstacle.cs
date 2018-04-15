@@ -4,38 +4,33 @@ using UnityEngine;
 
 public class TableObstacle : HallObstacle
 {
-    /*
-    void Start()
-    {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-    }
 
-    void Update()
-    {
+    private float _rotated = 0;
+    private float _prevAngle = 0;
+    private bool _rotateDone = false;
 
-        if (isObstacle && !_fallStarted && Vector3.Distance(player.transform.position, transform.position) <= triggerDistance)
+    public override bool Move()
+    {
+        Debug.Log("table triggered");
+        if (transform.eulerAngles.x >= 90)
         {
-            _fallStarted = true;
-            StartCoroutine("Fall");
+            _rotateDone = true;
         }
-    }
-    */
-
-    public override IEnumerator Move()
-    {
-        Debug.Log("fall triggered");
-        while (Mathf.Abs(transform.eulerAngles.x) < 90)
+        if (!_rotateDone)
         {
             GetComponent<Rigidbody>().AddForceAtPosition(transform.forward * 90,
-                                                         new Vector3(transform.position.x,
-                                                                     2,
-                                                                     transform.position.z));
-            yield return null;
+                                                     new Vector3(transform.position.x,
+                                                                 2,
+                                                                 transform.position.z));
         }
-        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().AddForce(Vector3.down * 1000);
-        _moveDone = true;
+        else
+        {
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().AddForce(Vector3.down * 1000);
+            return true;
+        }
+        return false;
     }
 
 }
