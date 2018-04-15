@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - FurnitureSpawn
   - FireSpawn
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
