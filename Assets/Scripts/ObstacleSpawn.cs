@@ -47,22 +47,6 @@ public class ObstacleSpawn : MonoBehaviour
                 Transform[] points = location.GetComponentsInChildren<Transform>();
                 points = points.Where(c => c.tag == "SpawnPoint").ToArray();
                 Transform spawnPoint = points[Random.Range(0, points.Length)];
-                //Debug.Log(points.Length);
-                //Debug.Log(spawnPoint);
-                //string side = RandomSide();
-                //Quaternion direction = Quaternion.identity;
-                
-                //set orientation of object
-                //if (side == "Left")
-                //{
-                    //direction = Quaternion.Euler(0, 90, 0);
-                //}
-                //else
-                //{
-                    //direction = Quaternion.Euler(0, -90, 0);
-                //}
-                //Transform spawnPoint = location.transform.Find(side);
-                //Debug.Log(spawnPoint);
 
                 //instantiate
                 GameObject newObject = Instantiate(obstacle,
@@ -86,11 +70,9 @@ public class ObstacleSpawn : MonoBehaviour
             if (Random.Range(0f, 1f) < _fireFrequency)
             {
                 //pick side of hallway to spawn on
-                //string side = RandomSide();
-                //Transform spawnPoint = location.transform.Find(side);
                 Transform[] points = location.GetComponentsInChildren<Transform>();
+                points = points.Where(c => c.tag == "SpawnPoint").ToArray();
                 Transform spawnPoint = points[Random.Range(0, points.Length)];
-                Debug.Log("fire");
 
                 //instantiate
                 GameObject newObject = Instantiate(_fire,
@@ -102,17 +84,4 @@ public class ObstacleSpawn : MonoBehaviour
         }
 
     }
-
-    private string RandomSide()
-    {
-        if (Random.Range(0, 2) < 1)
-        {
-            return "Left";
-        }
-        else
-        {
-            return "Right";
-        }
-    }
-
 }

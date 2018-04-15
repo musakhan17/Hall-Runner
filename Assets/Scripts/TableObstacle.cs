@@ -11,7 +11,6 @@ public class TableObstacle : HallObstacle
 
     public override bool Move()
     {
-        Debug.Log("table triggered");
         if (transform.eulerAngles.x >= 90)
         {
             _rotateDone = true;
