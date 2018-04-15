@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HallSpawn : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
 
     //player distance at which to spawn next hall
@@ -20,6 +20,8 @@ public class HallSpawn : MonoBehaviour
     private GameObject _player;
     [SerializeField]
     private Text _progressText;
+    [SerializeField]
+    private Text _levelEndText;
     private Transform _currentHallEnd;
 
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
@@ -36,6 +38,13 @@ public class HallSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateScore();
+
+        if (_activeHalls.Count > 2)
+        {
+            Destroy(_activeHalls.Dequeue());
+        }
+
         if (_numInstantiatedHalls < levelLength &&
             Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= spawnDist)
         {
@@ -56,8 +65,6 @@ public class HallSpawn : MonoBehaviour
             //move to correct location
             newHall.transform.position = _currentHallEnd.position;
 
-            //Vector3 translate = Vector3.forward * hallLength;
-            //transform.Translate(translate);
 
             //update current hall
             _currentHall = newHall;
@@ -69,17 +76,39 @@ public class HallSpawn : MonoBehaviour
                 _currentHall.transform.Find("Corridor").Find("Front_Door").gameObject.SetActive(true);
             }
         }
-        if (_activeHalls.Count > 2)
+        else if(_numInstantiatedHalls >= levelLength &&
+            Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1)
         {
-            Destroy(_activeHalls.Dequeue());
+            EndLevel();
         }
 
-        updateScore();
 
     }
 
-    public void updateScore()
+    private void UpdateScore()
     {
-        _progressText.text = "Score: " + (int)_player.GetComponent<Player>().GetProgress();
+        _progressText.text = "Score: " + (int) _player.GetComponent<Player>().GetProgress();
+    }
+
+    private void EndLevel()
+    {
+        Time.timeScale = 0;
+        _levelEndText.text = "Level Completed";
+        _levelEndText.gameObject.SetActive(true);
+    }
+
+    public void FailLevel()
+    {
+        StartCoroutine("FailRoutine");
+    }
+
+    private IEnumerator FailRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        _levelEndText.text = "Level Failed";
+        _levelEndText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
+
     }
 }
