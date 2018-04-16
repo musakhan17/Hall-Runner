@@ -3308,9 +3308,9 @@ MonoBehaviour:
   _progressText: {fileID: 854903185}
   _levelCompletedDisplay: {fileID: 1886457700}
   _levelFailedDisplay: {fileID: 1569148842}
-  _fireFrequency: 0.5
-  _furnitureFrequency: 0.5
-  _furnitureIsObstacleFrequency: 0.4
+  _fireFrequency: 1
+  _furnitureFrequency: 0.6
+  _furnitureIsObstacleFrequency: 0.5
 --- !u!4 &667958789
 Transform:
   m_ObjectHideFlags: 0
@@ -3387,7 +3387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de70dfcaee47c64d942a495389d78f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   _levelManager: {fileID: 667958787}
   _camera: {fileID: 1014769441}
   direction: {x: 0, y: 0, z: 1}
@@ -4290,7 +4290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &931086326
 RectTransform:
   m_ObjectHideFlags: 0

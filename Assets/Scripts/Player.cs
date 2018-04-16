@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
                 transform.localScale = new Vector3(1, 1, 1);
 
             }
-            Debug.Log(_camera.transform.position.y);
+            //Debug.Log(_camera.transform.position.y);
             AutoMove();
         }
     }
@@ -51,6 +51,11 @@ public class Player : MonoBehaviour
     public float GetProgress()
     {
         return _progress;
+    }
+
+    public void SetProgress(float val)
+    {
+        _progress = val;
     }
 
     private void AutoMove()
