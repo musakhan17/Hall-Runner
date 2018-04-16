@@ -20,7 +20,15 @@ public class ObstacleSpawn : MonoBehaviour
     private List<GameObject> _fireSpawnPoints = new List<GameObject>();
 
 
-    void Start()
+    public void Init(float fireFrequency, float furnitureFrequency, float furnitureIsObstacleFrequency)
+    {
+        _fireFrequency = fireFrequency;
+        _furnitureFrequency = furnitureFrequency;
+        _furnitureIsObstacleFrequency = furnitureIsObstacleFrequency;
+        Spawn();
+
+    }
+    private void Spawn()
     {
         //get spawn points
         foreach (Transform child in gameObject.GetComponentsInChildren<Transform>())

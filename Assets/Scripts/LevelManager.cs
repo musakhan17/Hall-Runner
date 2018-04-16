@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -21,7 +22,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private Text _progressText;
     [SerializeField]
-    private Text _levelEndText;
+    private GameObject _levelCompletedDisplay;
+    [SerializeField]
+    private GameObject _levelFailedDisplay;
+    [SerializeField]
+    private float _fireFrequency = 0.5f; //chance of spawning fire @ a spawn point
+    [SerializeField]
+    private float _furnitureFrequency = 0.5f; //chance of spawning an object @ a spawn point
+    [SerializeField]
+    private float _furnitureIsObstacleFrequency = 0.1f; //chance an object will become an obstacle
     private Transform _currentHallEnd;
 
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
@@ -30,12 +39,14 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        _player.GetComponent<Player>().SetProgress(SceneLoader.GetPreviousProgress());
+        Time.timeScale = 1;
         _currentHallEnd = _currentHall.transform.Find("End");
         _activeHalls.Enqueue(_currentHall);
+        _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency);
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateScore();
@@ -57,6 +68,9 @@ public class LevelManager : MonoBehaviour
 
             Vector3 scale = _currentHall.transform.localScale;
             GameObject newHall = Instantiate(_hallPrefab, _currentHallEnd.position, rotation);
+            newHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency,
+                                                       _furnitureFrequency,
+                                                       _furnitureIsObstacleFrequency);
 
             //flip new hall
             scale.x = scale.x * -1;
@@ -76,7 +90,7 @@ public class LevelManager : MonoBehaviour
                 _currentHall.transform.Find("Corridor").Find("Front_Door").gameObject.SetActive(true);
             }
         }
-        else if(_numInstantiatedHalls >= levelLength &&
+        else if (_numInstantiatedHalls >= levelLength &&
             Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1)
         {
             EndLevel();
@@ -87,16 +101,21 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateScore()
     {
-        _progressText.text = "Score: " + (int) _player.GetComponent<Player>().GetProgress();
+        _progressText.text = "Score: " + (int)_player.GetComponent<Player>().GetProgress();
     }
 
+    /**
+    when player successfully reaches end of level
+     */
     private void EndLevel()
     {
         Time.timeScale = 0;
-        _levelEndText.text = "Level Completed";
-        _levelEndText.gameObject.SetActive(true);
+        _levelCompletedDisplay.gameObject.SetActive(true);
     }
 
+    /**
+    called by player on collision
+     */
     public void FailLevel()
     {
         StartCoroutine("FailRoutine");
@@ -105,10 +124,24 @@ public class LevelManager : MonoBehaviour
     private IEnumerator FailRoutine()
     {
         yield return new WaitForSeconds(1f);
-        _levelEndText.text = "Level Failed";
-        _levelEndText.gameObject.SetActive(true);
+        _levelFailedDisplay.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         Time.timeScale = 0;
+    }
 
+    /**
+    load next level - called on click by button
+     */
+    public void Continue(string levelName)
+    {
+        SceneLoader.LoadScene(levelName, _player.GetComponent<Player>().GetProgress());
+    }
+
+    /**
+    restart level - called on click by button
+     */
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
