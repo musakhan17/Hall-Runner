@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ObstacleSpawn : MonoBehaviour
@@ -7,6 +8,8 @@ public class ObstacleSpawn : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _obstacles;
+    [SerializeField]
+    private GameObject _fire;
     [SerializeField]
     private float _fireFrequency = 0.05f; //chance of spawning fire @ a spawn point
     [SerializeField]
@@ -17,7 +20,15 @@ public class ObstacleSpawn : MonoBehaviour
     private List<GameObject> _fireSpawnPoints = new List<GameObject>();
 
 
-    void Start()
+    public void Init(float fireFrequency, float furnitureFrequency, float furnitureIsObstacleFrequency)
+    {
+        _fireFrequency = fireFrequency;
+        _furnitureFrequency = furnitureFrequency;
+        _furnitureIsObstacleFrequency = furnitureIsObstacleFrequency;
+        Spawn();
+
+    }
+    private void Spawn()
     {
         //get spawn points
         foreach (Transform child in gameObject.GetComponentsInChildren<Transform>())
@@ -27,7 +38,7 @@ public class ObstacleSpawn : MonoBehaviour
                 _furnitureSpawnPoints.Add(child.gameObject);
             } else if (child.tag == "FireSpawn")
             {
-                _fireSpawnPoints = new List<GameObject>();
+                _fireSpawnPoints.Add(child.gameObject);
             }
         }
 
@@ -37,30 +48,20 @@ public class ObstacleSpawn : MonoBehaviour
             {
                 //get random obstable
                 int index = Random.Range(0, _obstacles.Length);
-                Debug.Log(index);
+                //Debug.Log(index);
                 GameObject obstacle = _obstacles[index];
 
                 //pick side of hallway to spawn on
-                string side = RandomSide();
-                Quaternion direction = Quaternion.identity;
-                
-                //set orientation of object
-                if (side == "Left")
-                {
-                    direction = Quaternion.Euler(0, 90, 0);
-                }
-                else
-                {
-                    direction = Quaternion.Euler(0, -90, 0);
-                }
-                Transform spawnPoint = location.transform.Find(side);
-                Debug.Log(spawnPoint);
+                Transform[] points = location.GetComponentsInChildren<Transform>();
+                points = points.Where(c => c.tag == "SpawnPoint").ToArray();
+                Transform spawnPoint = points[Random.Range(0, points.Length)];
 
                 //instantiate
                 GameObject newObject = Instantiate(obstacle,
                                                      spawnPoint.position,
-                                                     direction
+                                                     spawnPoint.rotation
                                                     );
+                newObject.transform.parent = gameObject.transform;
                 //decide if object will be an obstacle
                 HallObstacle hallObstacle = newObject.GetComponent<HallObstacle>();
                 if (hallObstacle != null)
@@ -71,18 +72,24 @@ public class ObstacleSpawn : MonoBehaviour
             }
         }
 
-    }
-
-    private string RandomSide()
-    {
-        if (Random.Range(0, 2) < 1)
+        //generate fire obstacles
+        foreach (GameObject location in _fireSpawnPoints)
         {
-            return "Left";
-        }
-        else
-        {
-            return "Right";
-        }
-    }
+            if (Random.Range(0f, 1f) < _fireFrequency)
+            {
+                //pick side of hallway to spawn on
+                Transform[] points = location.GetComponentsInChildren<Transform>();
+                points = points.Where(c => c.tag == "SpawnPoint").ToArray();
+                Transform spawnPoint = points[Random.Range(0, points.Length)];
 
+                //instantiate
+                GameObject newObject = Instantiate(_fire,
+                                                     spawnPoint.position,
+                                                     Quaternion.identity
+                                                    );
+                newObject.transform.parent = gameObject.transform;
+            }
+        }
+
+    }
 }
