@@ -31,26 +31,43 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey("c"))
             { // press C to crouch
-                transform.localScale = new Vector3(1, 0.5f, 1);
+                //transform.root.localScale = new Vector3(1, 0.5f, 1);
+                transform.GetComponent<CapsuleCollider>().height = 0.6f;
             }
             else if (_camera.transform.position.y < _height)
             { // or use player height
-              // TODO test if this actually works
                 transform.localScale = new Vector3(1, _camera.transform.position.y / _height, 1);
             }
             else
             {
                 transform.localScale = new Vector3(1, 1, 1);
-
+                //transform.GetComponent<CapsuleCollider>().height = _camera.transform.position.y;
             }
             //Debug.Log(_camera.transform.position.y);
-            AutoMove();
+            //AutoMove();
         }
+    }
+
+    public Vector3 GetHorizontalDirection()
+    {
+        direction = _camera.transform.forward;
+        direction.y = 0;
+        return direction;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
     }
 
     public float GetProgress()
     {
         return _progress;
+    }
+
+    public void AddProgress(float val)
+    {
+        _progress += val;
     }
 
     public void SetProgress(float val)
@@ -63,7 +80,22 @@ public class Player : MonoBehaviour
         direction = _camera.transform.forward;
         direction.y = 0;
         Vector3 startPos = transform.position;
-        transform.Translate(direction * speed * Time.deltaTime);
+        Vector3 translate = direction * speed * Time.deltaTime;
+        //transform.Translate(translate);
+
+        //update position of everything under root parent, so motion tracking doesn't move
+        //anything away from parents
+        Transform[] allInTree = transform.root.GetComponentsInChildren<Transform>();
+        Vector3[] positions = new Vector3[allInTree.Length];
+        for (int i = 0; i < allInTree.Length; i++)
+        {
+            positions[i] = allInTree[i].position;
+        }
+        for (int i = 0; i < allInTree.Length; i++)
+        {
+            allInTree[i].position = positions[i] + translate;
+        }
+
         Vector3 endPos = transform.position;
         _progress += Vector3.Distance(endPos, startPos);
 

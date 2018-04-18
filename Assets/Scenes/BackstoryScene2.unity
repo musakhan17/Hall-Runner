@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 576456575}
   m_Layer: 0
   m_Name: Backstory_scene_text
-  m_TagString: Button1
+  m_TagString: Button2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,19 +212,8 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 576456573}
-  m_Text: 'You have awakened in an unfamiliar
-
-    bedroom. Unsure of how you got there,
-
-    you have decided to leave through the
-
-    main door in the room. You then enter a
-
-    strange hallway. Though it seems that their
-
-    is more to this place than you thought...
-
-'
+  m_Text: "Ha... so you have made it this far, huh? \nThen are you ready for round
+    2? It only\ngets worse."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -463,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015615565
@@ -498,7 +487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I Understand!
+  m_Text: Bring it!!!
 --- !u!222 &1015615566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -516,7 +505,7 @@ GameObject:
   - component: {fileID: 1369095028}
   m_Layer: 0
   m_Name: Background_wall
-  m_TagString: Button1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,8 +661,8 @@ GameObject:
   - component: {fileID: 2125238091}
   - component: {fileID: 2125238090}
   m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
+  m_Name: Button_Level_2
+  m_TagString: Button2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -76}
+  m_AnchoredPosition: {x: -10, y: 25}
   m_SizeDelta: {x: 160, y: 33.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2125238090
