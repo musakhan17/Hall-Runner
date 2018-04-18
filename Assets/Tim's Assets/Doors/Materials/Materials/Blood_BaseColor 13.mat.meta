@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Customizable_Furnture/Readme.meta
 <<<<<<< HEAD
 guid: 56b32fc8c2496734b8600df9a381653b
 folderAsset: yes
@@ -11,7 +12,14 @@ timeCreated: 1523914532
 licenseType: Free
 >>>>>>> master
 DefaultImporter:
+=======
+guid: 66ed900da2e6249099e3029f210969af
+timeCreated: 1524069414
+licenseType: Free
+NativeFormatImporter:
+>>>>>>> master:Assets/Tim's Assets/Doors/Materials/Materials/Blood_BaseColor 13.mat.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
