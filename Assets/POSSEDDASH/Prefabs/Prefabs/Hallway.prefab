@@ -2210,6 +2210,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536362556752616}
+  - component: {fileID: 114884232297263612}
   m_Layer: 0
   m_Name: Hallway
   m_TagString: Untagged
@@ -7478,7 +7479,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114884232297263612
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999570003980130}
