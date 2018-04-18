@@ -12,21 +12,28 @@ public class HallObstacle : MonoBehaviour
 
     public virtual void Start()
     {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Vector3.Distance(player.transform.position, transform.position) <= triggerDistance)
+        if (player == null)
         {
-            _moveStarted = true;
+            player = GameObject.FindWithTag("Player");
         }
-
-        if (isObstacle && _moveStarted && !_moveDone)
+        else
         {
-            _moveDone = Move();
+            if (Vector3.Distance(player.transform.position, transform.position) <= triggerDistance)
+            {
+                _moveStarted = true;
+            }
+
+            if (isObstacle && _moveStarted && !_moveDone)
+            {
+                _moveDone = Move();
+            }
         }
     }
 
