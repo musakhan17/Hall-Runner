@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2017.4.0f1
 =======
 m_EditorVersion: 2017.4.1f1
@@ -15,3 +16,6 @@ m_EditorVersion: 2017.3.1f1
 m_EditorVersion: 2017.4.1f1
 >>>>>>> Assets Improvised
 >>>>>>> Lydia_Branch
+=======
+m_EditorVersion: 2017.4.0f1
+>>>>>>> master

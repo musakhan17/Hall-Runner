@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 guid: 5bab8ae870213f2438a4bbaff6314397
 folderAsset: yes
 timeCreated: 1523215394
 =======
+<<<<<<< HEAD
 guid: 67bb47519cb38fa448c3b33e0926a9b6
 folderAsset: yes
 timeCreated: 1523287102
@@ -14,6 +18,12 @@ guid: 67bb47519cb38fa448c3b33e0926a9b6
 folderAsset: yes
 timeCreated: 1523287102
 >>>>>>> Lydia_Branch
+=======
+guid: 67bb47519cb38fa448c3b33e0926a9b6
+folderAsset: yes
+timeCreated: 1523287102
+>>>>>>> master
+>>>>>>> master
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
