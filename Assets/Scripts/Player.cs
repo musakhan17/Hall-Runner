@@ -65,6 +65,11 @@ public class Player : MonoBehaviour
         return _progress;
     }
 
+    public void AddProgress(float val)
+    {
+        _progress += val;
+    }
+
     public void SetProgress(float val)
     {
         _progress = val;

@@ -54,11 +54,11 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        UpdateScore();
 
         if (_gameRunning)
         {
             PlayerMovement();
+            UpdateScore();
         }
         if (_activeHalls.Count > 2)
         {
@@ -110,7 +110,9 @@ public class LevelManager : MonoBehaviour
     {
         Vector3 direction = -_player.GetComponent<Player>().GetHorizontalDirection();
         float speed = _player.GetComponent<Player>().GetSpeed();
-        transform.Translate(direction * speed * Time.deltaTime);
+        float movement = speed * Time.deltaTime;
+        transform.Translate(direction * movement);
+        _player.GetComponent<Player>().AddProgress(movement);
 
     }
 
