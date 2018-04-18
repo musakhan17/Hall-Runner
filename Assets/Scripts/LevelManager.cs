@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     public float spawnDist = 10.0f;
     //number of hallway units to spawn for this level
     public int levelLength = 5;
+    //pause on fail before letting player fall down or not
+    public bool letFall = false;
     //prefab for hallway
     [SerializeField]
     private GameObject _hallPrefab;
@@ -35,7 +37,8 @@ public class LevelManager : MonoBehaviour
 
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
     private int _numInstantiatedHalls = 1;
-    private bool _flipNext = true;
+
+    private bool _gameRunning = true;
 
     void Start()
     {
@@ -44,6 +47,8 @@ public class LevelManager : MonoBehaviour
         _currentHallEnd = _currentHall.transform.Find("End");
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency);
+        _currentHall.transform.SetParent(transform);
+        _gameRunning = true;
 
     }
 
@@ -51,6 +56,10 @@ public class LevelManager : MonoBehaviour
     {
         UpdateScore();
 
+        if (_gameRunning)
+        {
+            PlayerMovement();
+        }
         if (_activeHalls.Count > 2)
         {
             Destroy(_activeHalls.Dequeue());
@@ -59,18 +68,14 @@ public class LevelManager : MonoBehaviour
         if (_numInstantiatedHalls < levelLength &&
             Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= spawnDist)
         {
-            Quaternion rotation = Quaternion.identity;
-            if (_flipNext)
-            {
-                rotation = Quaternion.Euler(0, 180, 0);
-            }
-            _flipNext = !_flipNext;
+            //Quaternion rotation = Quaternion.identity;
+            Quaternion rotation = _currentHall.transform.rotation;
+            Vector3 angles = rotation.eulerAngles;
+            angles.y = (angles.y + 180) % 360;
+            rotation = Quaternion.Euler(angles.x, angles.y, angles.z);
 
             Vector3 scale = _currentHall.transform.localScale;
             GameObject newHall = Instantiate(_hallPrefab, _currentHallEnd.position, rotation);
-            newHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency,
-                                                       _furnitureFrequency,
-                                                       _furnitureIsObstacleFrequency);
 
             //flip new hall
             scale.x = scale.x * -1;
@@ -78,7 +83,10 @@ public class LevelManager : MonoBehaviour
 
             //move to correct location
             newHall.transform.position = _currentHallEnd.position;
-
+            newHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency,
+                                                       _furnitureFrequency,
+                                                       _furnitureIsObstacleFrequency);
+            newHall.transform.SetParent(transform);
 
             //update current hall
             _currentHall = newHall;
@@ -95,7 +103,14 @@ public class LevelManager : MonoBehaviour
         {
             EndLevel();
         }
+    }
 
+
+    private void PlayerMovement()
+    {
+        Vector3 direction = -_player.GetComponent<Player>().GetHorizontalDirection();
+        float speed = _player.GetComponent<Player>().GetSpeed();
+        transform.Translate(direction * speed * Time.deltaTime);
 
     }
 
@@ -118,15 +133,24 @@ public class LevelManager : MonoBehaviour
      */
     public void FailLevel()
     {
+        _gameRunning = false;
         StartCoroutine("FailRoutine");
     }
 
     private IEnumerator FailRoutine()
     {
-        yield return new WaitForSeconds(1f);
-        _levelFailedDisplay.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
+        if (letFall)
+        {
+            yield return new WaitForSeconds(1f);
+            _levelFailedDisplay.gameObject.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            _levelFailedDisplay.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     /**
