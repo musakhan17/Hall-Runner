@@ -183,6 +183,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa723b44260e74040869a722c46a85c5, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &124315839 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 958457594}
 --- !u!1 &150107071
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +372,8 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 4.98
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114884232297263612, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &322020317 stripped
@@ -981,6 +987,16 @@ Transform:
   m_Father: {fileID: 1315618686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &837809022 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1883185261795400, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 958457594}
+--- !u!1 &880932940 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 958457594}
 --- !u!1 &892227499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,12 +1294,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 0}
-  actualHeadset: {fileID: 0}
-  actualLeftController: {fileID: 0}
-  actualRightController: {fileID: 0}
-  modelAliasLeftController: {fileID: 0}
-  modelAliasRightController: {fileID: 0}
+  actualBoundaries: {fileID: 1626339831}
+  actualHeadset: {fileID: 1405975666}
+  actualLeftController: {fileID: 880932940}
+  actualRightController: {fileID: 124315839}
+  modelAliasLeftController: {fileID: 1596395911}
+  modelAliasRightController: {fileID: 837809022}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -1841,6 +1857,11 @@ MonoBehaviour:
   listenOnAxisChange: 0
   maximumRotationSpeed: 3
   rotationMultiplier: 1.5
+--- !u!1 &1405975666 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 958457594}
 --- !u!1 &1424743277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,6 +2134,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1596395911 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384746914293964, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 2}
+  m_PrefabInternal: {fileID: 958457594}
 --- !u!1 &1625468877
 GameObject:
   m_ObjectHideFlags: 0
