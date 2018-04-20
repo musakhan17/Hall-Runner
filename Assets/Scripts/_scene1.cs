@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelManager1 : MonoBehaviour
+public class _scene1 : MonoBehaviour
 {
 
     //most recent hallway object in game
@@ -12,33 +12,17 @@ public class LevelManager1 : MonoBehaviour
     private GameObject _currentHall;
     [SerializeField]
     private GameObject _player;
-    [SerializeField]
-    private GameObject Continue_Display;
- 
-    private Transform _currentHallEnd;
+
 
     void Start()
     {
         Time.timeScale = 1;
-        _currentHallEnd = _currentHall.transform.Find("End");
 
     }
 
     void Update()
     {
-        if (Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1.5)
-        {
-            EndLevel();
-        }
 
-    }
-    /*
-      when player successfully reaches end of level
-      */
-    private void EndLevel()
-    {
-        Time.timeScale = 0;
-        Continue_Display.gameObject.SetActive(true);
     }
 
     /*

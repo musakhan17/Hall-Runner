@@ -3673,7 +3673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47720a6fb6ab45747b0a7157de0a6a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: corridor_transition
   _currentHall: {fileID: 322020317}
   _player: {fileID: 1657567472}
   Continue_Display: {fileID: 1561647405}
