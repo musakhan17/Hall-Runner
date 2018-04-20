@@ -34,14 +34,14 @@ public class Player : MonoBehaviour
                 //transform.root.localScale = new Vector3(1, 0.5f, 1);
                 transform.GetComponent<CapsuleCollider>().height = 0.6f;
             }
-            else if (_camera.transform.position.y < _height)
-            { // or use player height
-                transform.localScale = new Vector3(1, _camera.transform.position.y / _height, 1);
-            }
+           // else if (_camera.transform.position.y < _height)
+            //{ // or use player height
+              //  transform.localScale = new Vector3(1, _camera.transform.position.y / _height, 1);
+            //}
             else
             {
-                transform.localScale = new Vector3(1, 1, 1);
-                //transform.GetComponent<CapsuleCollider>().height = _camera.transform.position.y;
+              //  transform.localScale = new Vector3(1, 1, 1);
+              transform.GetComponent<CapsuleCollider>().height = _camera.transform.position.y;
             }
             //Debug.Log(_camera.transform.position.y);
             //AutoMove();

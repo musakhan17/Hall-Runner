@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4836790091836362}
   - component: {fileID: 33142721748428654}
   - component: {fileID: 23519018940928374}
+  - component: {fileID: 64522054826121380}
   m_Layer: 0
   m_Name: bedroom
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567931177371166}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.48, y: 0.55, z: -8.68}
+  m_LocalPosition: {x: 4.48, y: 0.66, z: -8.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567931177371166}
+  m_Mesh: {fileID: 4300000, guid: f0607e59d182544ca8b1c109e4826e45, type: 3}
+--- !u!64 &64522054826121380
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567931177371166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f0607e59d182544ca8b1c109e4826e45, type: 3}
