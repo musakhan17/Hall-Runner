@@ -54,7 +54,6 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-
         if (_gameRunning)
         {
             PlayerMovement();
@@ -99,7 +98,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         else if (_numInstantiatedHalls >= levelLength &&
-            Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1)
+            Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 2)
         {
             EndLevel();
         }

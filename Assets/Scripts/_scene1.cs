@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelManager1 : MonoBehaviour
+public class _scene1 : MonoBehaviour
 {
 
     //most recent hallway object in game
@@ -13,32 +13,29 @@ public class LevelManager1 : MonoBehaviour
     [SerializeField]
     private GameObject _player;
     [SerializeField]
-    private GameObject Continue_Display;
- 
-    private Transform _currentHallEnd;
+    private float _fadeDuration = 2f;
+
 
     void Start()
     {
+        FadeToBlack();
+        Invoke("FadeToBlack", _fadeDuration);
         Time.timeScale = 1;
-        _currentHallEnd = _currentHall.transform.Find("End");
 
     }
 
-    void Update()
+    private void FadeToBlack()
     {
-        if (Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1.5)
-        {
-            EndLevel();
-        }
+        SteamVR_Fade.Start(Color.clear, 0f);
+
+        SteamVR_Fade.Start(Color.black, _fadeDuration);
 
     }
-    /*
-      when player successfully reaches end of level
-      */
-    private void EndLevel()
+
+    private void FadeFromBlack()
     {
-        Time.timeScale = 0;
-        Continue_Display.gameObject.SetActive(true);
+        SteamVR_Fade.Start(Color.black, 0f);
+        SteamVR_Fade.Start(Color.clear, _fadeDuration);
     }
 
     /*

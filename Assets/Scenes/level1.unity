@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.1
+  m_FogDensity: 0.3
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.41782007, g: 0.5003681, b: 0.6764706, a: 1}
@@ -712,7 +712,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4536362556752616, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4536362556752616, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -720,7 +720,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4536362556752616, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.66
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: 4536362556752616, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3301,12 +3301,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDist: 10
-  levelLength: 4
+  levelLength: 2
   letFall: 0
   _hallPrefab: {fileID: 1999570003980130, guid: b75ff472e593f664bb4756f24a058e8e,
     type: 2}
   _currentHall: {fileID: 323694964}
-  _player: {fileID: 773809045}
+  _player: {fileID: 1147268405}
   _progressText: {fileID: 854903185}
   _levelCompletedDisplay: {fileID: 1886457700}
   _levelFailedDisplay: {fileID: 1569148842}
@@ -3393,7 +3393,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

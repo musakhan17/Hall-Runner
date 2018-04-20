@@ -2,6 +2,7 @@ fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 guid: 5bab8ae870213f2438a4bbaff6314397
@@ -25,6 +26,10 @@ timeCreated: 1523287102
 >>>>>>> master
 >>>>>>> master
 licenseType: Free
+=======
+guid: 5bab8ae870213f2438a4bbaff6314397
+folderAsset: yes
+>>>>>>> nhi_branch
 DefaultImporter:
   externalObjects: {}
   userData: 
