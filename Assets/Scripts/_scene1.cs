@@ -12,17 +12,30 @@ public class _scene1 : MonoBehaviour
     private GameObject _currentHall;
     [SerializeField]
     private GameObject _player;
+    [SerializeField]
+    private float _fadeDuration = 2f;
 
 
     void Start()
     {
+        FadeToBlack();
+        Invoke("FadeToBlack", _fadeDuration);
         Time.timeScale = 1;
 
     }
 
-    void Update()
+    private void FadeToBlack()
     {
+        SteamVR_Fade.Start(Color.clear, 0f);
 
+        SteamVR_Fade.Start(Color.black, _fadeDuration);
+
+    }
+
+    private void FadeFromBlack()
+    {
+        SteamVR_Fade.Start(Color.black, 0f);
+        SteamVR_Fade.Start(Color.clear, _fadeDuration);
     }
 
     /*
