@@ -5,6 +5,7 @@ using UnityEngine;
 public class StoryLineButtons : MonoBehaviour {
 
     bool _destination = true;
+    bool textPrefab = true;
     
 	// Use this for initialization
 	void Start () {
@@ -18,15 +19,24 @@ public class StoryLineButtons : MonoBehaviour {
 		
 	}
 
-     void buttonClick(Collider other)
+     void ButtonClick(Collider other)
     {
         if (other.tag == "Button1")
         {
-            
+           
         }
         else if (other.tag == "Button2")
         {
             
         }
+    }
+
+    public void CreateText(Vector3 position)
+    {
+        // GameObject sct = (GameObject)Instantiate(Original, position, Quaternion.identity);
+
+        //sct.transform.SetParent(canvasTransform);
+        //sct.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+
     }
 }
