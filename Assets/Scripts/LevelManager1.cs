@@ -7,9 +7,6 @@ using UnityEngine.SceneManagement;
 public class LevelManager1 : MonoBehaviour
 {
 
-    //player distance at which to spawn next hall
-    public string scene;
-
     //most recent hallway object in game
     [SerializeField]
     private GameObject _currentHall;
@@ -31,7 +28,6 @@ public class LevelManager1 : MonoBehaviour
     {
         if (Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1.5)
         {
-            Debug.Log("Musa");
             EndLevel();
         }
 
