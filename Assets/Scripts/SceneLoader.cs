@@ -7,6 +7,8 @@ public static class SceneLoader
 {
     private static float _progress = 0;
 
+    private static bool _butt = true;
+
     public static void LoadScene(string name, float progress)
     {
         _progress = progress;
@@ -17,4 +19,14 @@ public static class SceneLoader
     {
         return _progress;
     }
+
+  /*  public static bool GetNextScene(string name, bool)
+    {
+
+    }
+
+   public void  OnTriggerEnter(Collider other)
+    {
+
+    }*/
 }
