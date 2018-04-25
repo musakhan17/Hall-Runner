@@ -16,15 +16,19 @@ public class ObstacleSpawn : MonoBehaviour
     private float _furnitureFrequency = 0.5f; //chance of spawning an object @ a spawn point
     [SerializeField]
     private float _furnitureIsObstacleFrequency = 0.1f; //chance an object will become an obstacle
+    [SerializeField]
+    private float _obstacleTriggerDistance = 8f; //chance an object will become an obstacle
     private List<GameObject> _furnitureSpawnPoints = new List<GameObject>();
     private List<GameObject> _fireSpawnPoints = new List<GameObject>();
 
 
-    public void Init(float fireFrequency, float furnitureFrequency, float furnitureIsObstacleFrequency)
+    public void Init(float fireFrequency, float furnitureFrequency, float furnitureIsObstacleFrequency,
+                     float obstacleTriggerDistance)
     {
         _fireFrequency = fireFrequency;
         _furnitureFrequency = furnitureFrequency;
         _furnitureIsObstacleFrequency = furnitureIsObstacleFrequency;
+        _obstacleTriggerDistance = obstacleTriggerDistance;
         Spawn();
 
     }
@@ -64,6 +68,7 @@ public class ObstacleSpawn : MonoBehaviour
                 newObject.transform.parent = gameObject.transform;
                 //decide if object will be an obstacle
                 HallObstacle hallObstacle = newObject.GetComponent<HallObstacle>();
+                hallObstacle.triggerDistance = _obstacleTriggerDistance;
                 if (hallObstacle != null)
                 {
                     hallObstacle.isObstacle = Random.Range(0f, 1f) < _furnitureIsObstacleFrequency
