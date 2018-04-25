@@ -41,9 +41,9 @@ public class _scene1 : MonoBehaviour
     /*
     load next level - called on click by button
      */
-    public void Continue(string levelName)
+    public void Continue(string corridor)
     {
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(corridor);
     }
 
 
