@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
     private float _furnitureFrequency = 0.5f; //chance of spawning an object @ a spawn point
     [SerializeField]
     private float _furnitureIsObstacleFrequency = 0.1f; //chance an object will become an obstacle
+    [SerializeField]
+    private float _obstacleTriggerDistance = 8f; //chance an object will become an obstacle
     private Transform _currentHallEnd;
 
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
@@ -46,7 +48,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         _currentHallEnd = _currentHall.transform.Find("End");
         _activeHalls.Enqueue(_currentHall);
-        _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency);
+        _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
         _gameRunning = true;
 
@@ -84,7 +86,8 @@ public class LevelManager : MonoBehaviour
             newHall.transform.position = _currentHallEnd.position;
             newHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency,
                                                        _furnitureFrequency,
-                                                       _furnitureIsObstacleFrequency);
+                                                       _furnitureIsObstacleFrequency,
+                                                       _obstacleTriggerDistance);
             newHall.transform.SetParent(transform);
 
             //update current hall

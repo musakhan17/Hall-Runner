@@ -7495,3 +7495,4 @@ MonoBehaviour:
   _fireFrequency: 0.5
   _furnitureFrequency: 0.5
   _furnitureIsObstacleFrequency: 0.4
+  _obstacleTriggerDistance: 8
