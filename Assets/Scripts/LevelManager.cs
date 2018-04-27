@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public float spawnDist = 10.0f;
     //number of hallway units to spawn for this level
     public int levelLength = 5;
+    public float playerSpeed = 2.5f;
     //pause on fail before letting player fall down or not
     public bool letFall = false;
     //prefab for hallway
@@ -58,7 +59,7 @@ public class LevelManager : MonoBehaviour
     {
         if (_gameRunning)
         {
-            PlayerMovement();
+            //PlayerMovement();
             UpdateScore();
         }
         if (_activeHalls.Count > 2)
@@ -114,7 +115,7 @@ public class LevelManager : MonoBehaviour
         float speed = _player.GetComponent<Player>().GetSpeed();
         float movement = speed * Time.deltaTime;
         transform.Translate(direction * movement);
-        _player.GetComponent<Player>().AddProgress(movement);
+        //_player.GetComponent<Player>().AddProgress(movement);
 
     }
 
