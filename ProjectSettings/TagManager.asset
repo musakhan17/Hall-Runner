@@ -9,11 +9,6 @@ TagManager:
   - Obstacle
   - FurnitureSpawn
   - FireSpawn
-  - SpawnPoint
-  - Button2
-  - Button1
-  - Level1
-  - Level2
   layers:
   - Default
   - TransparentFX
@@ -23,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - Environment
-  - Obstacles
+  - 
+  - 
   - 
   - 
   - 

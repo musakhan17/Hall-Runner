@@ -10,35 +10,23 @@ public class HallObstacle : MonoBehaviour
     protected bool _moveStarted = false;
     protected bool _moveDone = false;
 
-    public virtual void Start()
+    void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (player == null)
+        if (isObstacle && !_moveStarted && Vector3.Distance(player.transform.position, transform.position) <= triggerDistance)
         {
-            player = GameObject.FindWithTag("Player");
-        }
-        else
-        {
-            if (Vector3.Distance(player.transform.position, transform.position) <= triggerDistance)
-            {
-                _moveStarted = true;
-            }
-
-            if (isObstacle && _moveStarted && !_moveDone)
-            {
-                _moveDone = Move();
-            }
+            _moveStarted = true;
+            StartCoroutine("Move");
         }
     }
 
-    /* makes per-frame move update, returns if move is done */
-    public virtual bool Move()
+    public virtual IEnumerator Move()
     {
         /*
         while (Mathf.Abs(transform.eulerAngles.x) < 90)
@@ -54,7 +42,7 @@ public class HallObstacle : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(Vector3.down * 1000);
         _moveStarted = true;
         */
-        return true;
+        yield return null;
     }
 
 }
