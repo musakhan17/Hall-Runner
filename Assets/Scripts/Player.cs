@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Obstacle")
+        if (other.tag == "Obstacle" || other.tag == "Enemy")
         {
             //GetComponent<Rigidbody>().velocity = direction * speed;
             GetComponent<Rigidbody>().freezeRotation = false;

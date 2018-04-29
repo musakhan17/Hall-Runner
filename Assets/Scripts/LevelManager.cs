@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _player;
     [SerializeField]
+    private GameObject _enemy;
+    [SerializeField]
     private Text _progressText;
     [SerializeField]
     private GameObject _levelCompletedDisplay;
@@ -52,6 +54,9 @@ public class LevelManager : MonoBehaviour
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
         _gameRunning = true;
+        _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
+        _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
+        _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
 
     }
 
@@ -100,6 +105,10 @@ public class LevelManager : MonoBehaviour
             {
                 _currentHall.transform.Find("Corridor").Find("Front_Door").gameObject.SetActive(true);
             }
+            _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
+            Debug.Log("1" + _currentHall.transform.Find("WayPoint1").position);
+            _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
+            _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
         }
         else if (_numInstantiatedHalls >= levelLength &&
             Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 2)
