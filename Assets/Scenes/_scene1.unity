@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571373, b: 0.30692255, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5105,6 +5105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHall: {fileID: 601040662}
   _player: {fileID: 1401061108}
+  _fadeDuration: 2
 --- !u!4 &783914759
 Transform:
   m_ObjectHideFlags: 0
@@ -7845,7 +7846,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 783914758}
         m_MethodName: Continue
