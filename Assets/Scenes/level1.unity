@@ -3070,6 +3070,7 @@ GameObject:
   - component: {fileID: 541562056}
   - component: {fileID: 541562059}
   - component: {fileID: 541562058}
+  - component: {fileID: 541562060}
   - component: {fileID: 541562057}
   m_Layer: 0
   m_Name: Camera (eye)
@@ -3095,8 +3096,7 @@ Transform:
 --- !u!114 &541562057
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000012849300506, guid: 41c0760bd81dd084283814f0c432b466,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 541562055}
   m_Enabled: 1
@@ -3152,6 +3152,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &541562060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541562055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950203c4d0b4ec04bbd187c351736afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skybox: {fileID: 0}
+  refTransform: {fileID: 1147268406}
+  minAngVel: 0
+  maxAngVel: 180
+  minSpeed: 0
+  maxSpeed: -1
+  maxEffect: 0.75
+  feather: 0.1
+  smoothTime: 0.15
 --- !u!1 &573055312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,19 +5403,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014769441}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 950203c4d0b4ec04bbd187c351736afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skybox: {fileID: 0}
   refTransform: {fileID: 773809046}
-  minAngVel: 10
+  minAngVel: 0
   maxAngVel: 180
   minSpeed: 0
   maxSpeed: -1
-  maxEffect: 0.08
-  feather: 0
+  maxEffect: 0.75
+  feather: 0.1
   smoothTime: 0.15
 --- !u!1 &1019249625
 GameObject:
