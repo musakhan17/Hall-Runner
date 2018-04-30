@@ -106,7 +106,6 @@ public class LevelManager : MonoBehaviour
                 _currentHall.transform.Find("Corridor").Find("Front_Door").gameObject.SetActive(true);
             }
             _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
-            Debug.Log("1" + _currentHall.transform.Find("WayPoint1").position);
             _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
             _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
         }

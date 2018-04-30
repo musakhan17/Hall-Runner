@@ -26,9 +26,6 @@ public class Enemy : MonoBehaviour
         {
             Move();
         }
-        Debug.Log("this " + transform.position);
-        Debug.Log("target " + _targetWayPoint);
-        Debug.Log("num " + _wayPoints);
     }
 
     private void Move()

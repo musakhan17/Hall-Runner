@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.2
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3263fcf23b37540a2be97ccfcf64e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0
 --- !u!65 &60134501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1596,7 +1596,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 273352785}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
   m_Height: 1.7
