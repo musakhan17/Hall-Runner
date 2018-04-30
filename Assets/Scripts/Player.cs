@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _camera;
     public Vector3 direction = Vector3.forward;
-
+    public int lives;
 
     private float _progress = 0;
     private bool _collision = false;
@@ -95,7 +95,6 @@ public class Player : MonoBehaviour
         {
             allInTree[i].position = positions[i] + translate;
         }
-
         Vector3 endPos = transform.position;
         _progress += Vector3.Distance(endPos, startPos);
 
@@ -105,12 +104,16 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
-            //GetComponent<Rigidbody>().velocity = direction * speed;
-            GetComponent<Rigidbody>().freezeRotation = false;
-            _collision = true;
-            Debug.Log("Player collided");
-            _levelManager.GetComponent<LevelManager>().FailLevel();
+            lives--;
+            if (lives < 1)
+            {
+                //GetComponent<Rigidbody>().velocity = direction * speed;
+                GetComponent<Rigidbody>().freezeRotation = false;
+                _collision = true;
+                Debug.Log("Player collided");
+                _levelManager.GetComponent<LevelManager>().FailLevel();
+            }
         }
-
+        s
     }
 }
