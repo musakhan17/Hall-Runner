@@ -22,7 +22,7 @@ public class ObjectShowup : MonoBehaviour
     {
         _descript.SetActive(false);
         _nextbutton.SetActive(false);
-        _necklace.SetActive(true);
+        _necklace.SetActive(false);
         StartCoroutine(Showup());
     }
 
@@ -31,6 +31,7 @@ public class ObjectShowup : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         Debug.Log("Wait is over");
+        _necklace.SetActive(true);
         _descript.SetActive(true);
         yield return new WaitForSeconds(2);
         _nextbutton.SetActive(true);
