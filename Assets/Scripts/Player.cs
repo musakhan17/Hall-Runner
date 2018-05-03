@@ -114,6 +114,5 @@ public class Player : MonoBehaviour
                 _levelManager.GetComponent<LevelManager>().FailLevel();
             }
         }
-        s
     }
 }
