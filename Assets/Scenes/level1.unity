@@ -3555,10 +3555,10 @@ MonoBehaviour:
   _progressText: {fileID: 854903185}
   _levelCompletedDisplay: {fileID: 1886457700}
   _levelFailedDisplay: {fileID: 1569148842}
-  _fireFrequency: 0
-  _furnitureFrequency: 1
-  _furnitureIsObstacleFrequency: 1
-  _obstacleTriggerDistance: 5
+  _fireFrequency: 0.5
+  _furnitureFrequency: 0.6
+  _furnitureIsObstacleFrequency: 0.8
+  _obstacleTriggerDistance: 7
 --- !u!4 &667958789
 Transform:
   m_ObjectHideFlags: 0
@@ -3921,7 +3921,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 770213533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1147268406}
@@ -4078,6 +4078,7 @@ MonoBehaviour:
   _levelManager: {fileID: 667958787}
   _camera: {fileID: 1014769441}
   direction: {x: 0, y: 0, z: 1}
+  lives: 0
 --- !u!54 &773809050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6338,7 +6339,7 @@ CapsuleCollider:
   m_Radius: 0.2
   m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: -0.85, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!114 &1147268413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6354,6 +6355,7 @@ MonoBehaviour:
   _levelManager: {fileID: 667958787}
   _camera: {fileID: 541562055}
   direction: {x: 0, y: 0, z: 1}
+  lives: 0
 --- !u!1 &1161325706
 GameObject:
   m_ObjectHideFlags: 0
@@ -10358,7 +10360,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103438017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 541562056}
