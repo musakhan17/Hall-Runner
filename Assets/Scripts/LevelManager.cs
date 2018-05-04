@@ -13,6 +13,9 @@ public class LevelManager : MonoBehaviour
     public int levelLength = 5;
     //pause on fail before letting player fall down or not
     public bool letFall = false;
+    //audio death source
+    [SerializeField]
+    private AudioSource death1;
     //prefab for hallway
     [SerializeField]
     private GameObject _hallPrefab;
@@ -51,6 +54,7 @@ public class LevelManager : MonoBehaviour
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
         _gameRunning = true;
+       
 
     }
 
@@ -149,6 +153,8 @@ public class LevelManager : MonoBehaviour
             _levelFailedDisplay.gameObject.SetActive(true);
             yield return new WaitForSeconds(2f);
             Time.timeScale = 0;
+           // death1.Play();
+
         }
         else
         {
@@ -157,6 +163,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (letFall && other.tag == ("death1")) {
+            death1.Play();
+        }
+    }
     /**
     load next level - called on click by button
      */
