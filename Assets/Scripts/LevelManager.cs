@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +15,9 @@ public class LevelManager : MonoBehaviour
     public bool letFall = false;
     [SerializeField]
     private bool _autoMove = false;
+    //audio death source
+    [SerializeField]
+    private AudioSource death1;
     //prefab for hallway
     [SerializeField]
     private GameObject _hallPrefab;
@@ -75,7 +78,6 @@ public class LevelManager : MonoBehaviour
             "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
 
         }
-
     }
 
     void Update()
@@ -187,6 +189,8 @@ public class LevelManager : MonoBehaviour
             _levelFailedDisplay.gameObject.SetActive(true);
             yield return new WaitForSeconds(2f);
             Time.timeScale = 0;
+           // death1.Play();
+
         }
         else
         {
@@ -195,6 +199,12 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (letFall && other.tag == ("death1")) {
+            death1.Play();
+        }
+    }
     /**
     load next level - called on click by button
      */

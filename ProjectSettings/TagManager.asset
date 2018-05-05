@@ -16,6 +16,7 @@ TagManager:
   - Level2
   - Enemy
   - ExcludeTeleport
+  - death1
   layers:
   - Default
   - TransparentFX
