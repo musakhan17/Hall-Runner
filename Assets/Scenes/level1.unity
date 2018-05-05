@@ -125,8 +125,9 @@ GameObject:
   - component: {fileID: 12397496}
   - component: {fileID: 12397497}
   - component: {fileID: 12397499}
-  - component: {fileID: 12397498}
   - component: {fileID: 12397500}
+  - component: {fileID: 12397498}
+  - component: {fileID: 12397501}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -171,35 +172,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 12397495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408a45c3d6ea5804fa3bcaaaf8251ab5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fc65878c7102524bb8c2bcfbefff497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTeleport: 1
-  targetListPolicy: {fileID: 0}
-  controller: {fileID: 0}
-  pointerOriginTransform: {fileID: 0}
+  playareaCursor: {fileID: 0}
+  directionIndicator: {fileID: 0}
+  customRaycast: {fileID: 0}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 4
   pointerOriginSmoothingSettings:
     smoothsPosition: 0
     maxAllowedPerFrameDistanceDifference: 0.003
     smoothsRotation: 0
     maxAllowedPerFrameAngleDifference: 1.5
-  pointerMaterial: {fileID: 0}
-  pointerHitColor: {r: 0, g: 0.5, b: 0, a: 1}
-  pointerMissColor: {r: 0.8, g: 0, b: 0, a: 1}
-  holdButtonToActivate: 1
-  interactWithObjects: 0
-  grabToPointerTip: 0
-  activateDelay: 0
-  pointerVisibility: 0
-  layersToIgnore:
-    serializedVersion: 2
-    m_Bits: 4
-  pointerThickness: 0.002
-  pointerLength: 100
-  showPointerTip: 1
-  customPointerCursor: {fileID: 0}
-  pointerCursorMatchTargetNormal: 0
-  pointerCursorRescaledAlongDistance: 0
+  validCollisionColor: {r: 0, g: 1, b: 0, a: 1}
+  invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
+  tracerVisibility: 0
+  cursorVisibility: 0
+  maximumLength: 100
+  scaleFactor: 0.002
+  cursorScaleMultiplier: 25
+  cursorMatchTargetRotation: 0
+  cursorDistanceRescale: 0
+  maximumCursorScale: {x: Infinity, y: Infinity, z: Infinity}
+  customTracer: {fileID: 0}
+  customCursor: {fileID: 0}
 --- !u!114 &12397499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationButton: 2
+  activationButton: 1
   activationMode: 0
   selectionButton: 4
   clickMethod: 1
@@ -273,6 +271,33 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
+--- !u!114 &12397501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12397495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  pointerRenderer: {fileID: 12397498}
+  activationButton: 1
+  holdButtonToActivate: 1
+  activateOnEnable: 0
+  activationDelay: 0
+  selectionButton: 4
+  selectOnPress: 0
+  selectionDelay: 0
+  selectAfterHoverDuration: 0
+  interactWithObjects: 0
+  grabToPointerTip: 0
+  controller: {fileID: 0}
+  interactUse: {fileID: 0}
+  customOrigin: {fileID: 0}
 --- !u!1 &13171446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,7 +2445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235790314
 GameObject:
@@ -4743,6 +4768,7 @@ GameObject:
   - component: {fileID: 516660852}
   - component: {fileID: 516660851}
   - component: {fileID: 516660853}
+  - component: {fileID: 516660854}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -4787,35 +4813,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 516660848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408a45c3d6ea5804fa3bcaaaf8251ab5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fc65878c7102524bb8c2bcfbefff497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTeleport: 1
-  targetListPolicy: {fileID: 0}
-  controller: {fileID: 0}
-  pointerOriginTransform: {fileID: 0}
+  playareaCursor: {fileID: 0}
+  directionIndicator: {fileID: 0}
+  customRaycast: {fileID: 0}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 4
   pointerOriginSmoothingSettings:
     smoothsPosition: 0
     maxAllowedPerFrameDistanceDifference: 0.003
     smoothsRotation: 0
     maxAllowedPerFrameAngleDifference: 1.5
-  pointerMaterial: {fileID: 0}
-  pointerHitColor: {r: 0, g: 0.5, b: 0, a: 1}
-  pointerMissColor: {r: 0.8, g: 0, b: 0, a: 1}
-  holdButtonToActivate: 1
-  interactWithObjects: 0
-  grabToPointerTip: 0
-  activateDelay: 0
-  pointerVisibility: 0
-  layersToIgnore:
-    serializedVersion: 2
-    m_Bits: 4
-  pointerThickness: 0.002
-  pointerLength: 100
-  showPointerTip: 1
-  customPointerCursor: {fileID: 0}
-  pointerCursorMatchTargetNormal: 0
-  pointerCursorRescaledAlongDistance: 0
+  validCollisionColor: {r: 0, g: 1, b: 0, a: 1}
+  invalidCollisionColor: {r: 1, g: 0, b: 0, a: 1}
+  tracerVisibility: 0
+  cursorVisibility: 0
+  maximumLength: 100
+  scaleFactor: 0.002
+  cursorScaleMultiplier: 25
+  cursorMatchTargetRotation: 0
+  cursorDistanceRescale: 0
+  maximumCursorScale: {x: Infinity, y: Infinity, z: Infinity}
+  customTracer: {fileID: 0}
+  customCursor: {fileID: 0}
 --- !u!114 &516660852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4827,7 +4850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationButton: 2
+  activationButton: 1
   activationMode: 0
   selectionButton: 4
   clickMethod: 1
@@ -4889,6 +4912,33 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
+--- !u!114 &516660854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 516660848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  pointerRenderer: {fileID: 516660851}
+  activationButton: 1
+  holdButtonToActivate: 1
+  activateOnEnable: 0
+  activationDelay: 0
+  selectionButton: 4
+  selectOnPress: 0
+  selectionDelay: 0
+  selectAfterHoverDuration: 0
+  interactWithObjects: 0
+  grabToPointerTip: 0
+  controller: {fileID: 0}
+  interactUse: {fileID: 0}
+  customOrigin: {fileID: 0}
 --- !u!1 &516976109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6851,8 +6901,8 @@ MonoBehaviour:
   activeScriptingDefineSymbolsWithoutSDKClasses:
   - symbol: VRTK_DEFINE_SDK_OCULUS_AVATAR
     buildTargetGroupName: Standalone
-  scriptAliasLeftController: {fileID: 2102735915}
-  scriptAliasRightController: {fileID: 522910545}
+  scriptAliasLeftController: {fileID: 516660848}
+  scriptAliasRightController: {fileID: 12397495}
   autoManageVRSettings: 1
   autoLoadSetup: 1
   setups:
@@ -11206,8 +11256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50.8}
-  m_SizeDelta: {x: 291.3, y: 93.2}
+  m_AnchoredPosition: {x: 0, y: 19.6}
+  m_SizeDelta: {x: 271.1, y: 93.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1175694637
 MonoBehaviour:
@@ -11243,7 +11293,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Remember the creature? Now, you''re supposed to run away from it.
 
-    So, you will be move towards where you look. You need to dodge any object that
+    So, you will be moving towards where you look. You need to dodge any object that
     comes in your way
 
     Do not be scared, but don''t think you won''t get scared...
@@ -11532,7 +11582,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4701524715786640, guid: 2e4490b7c8c41be44befe64020e00c14, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1767685590116220, guid: 2e4490b7c8c41be44befe64020e00c14, type: 2}
       propertyPath: m_IsActive
@@ -11667,6 +11717,17 @@ MonoBehaviour:
       - m_Target: {fileID: 667958788}
         m_MethodName: Game_Start
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2133584053}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13264,7 +13325,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431700678
 GameObject:
@@ -14297,7 +14358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1518a5e598c7da244bc4850d3ae63354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickOnPointerCollision: 1
+  clickOnPointerCollision: 0
   autoActivateWithinDistance: 0
 --- !u!114 &1541060128
 MonoBehaviour:
@@ -19291,7 +19352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1518a5e598c7da244bc4850d3ae63354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickOnPointerCollision: 1
+  clickOnPointerCollision: 0
   autoActivateWithinDistance: 0
 --- !u!114 &2133584056
 MonoBehaviour:
@@ -19347,7 +19408,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2109272339
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &2133584059
@@ -19363,7 +19424,7 @@ RectTransform:
   - {fileID: 1237561864}
   - {fileID: 1175694636}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
