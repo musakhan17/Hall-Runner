@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
     private int _numInstantiatedHalls = 1;
 
-    private bool _gameRunning = true;
+    private bool _gameRunning;
 
     void Start()
     {
@@ -53,8 +53,12 @@ public class LevelManager : MonoBehaviour
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
+<<<<<<< HEAD
         _gameRunning = true;
        
+=======
+        _gameRunning = false;
+>>>>>>> master
 
     }
 
@@ -109,6 +113,11 @@ public class LevelManager : MonoBehaviour
         {
             EndLevel();
         }
+    }
+
+    public void Game_Start()
+    {
+        _gameRunning = true;
     }
 
 
