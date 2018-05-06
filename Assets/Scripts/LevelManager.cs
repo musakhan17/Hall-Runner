@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     public int levelLength = 5;
     //pause on fail before letting player fall down or not
     public bool letFall = false;
+    [SerializeField]
+    private bool _autoMove = false;
     //audio death source
     [SerializeField]
     private AudioClip death1;
@@ -24,8 +26,14 @@ public class LevelManager : MonoBehaviour
     private GameObject _currentHall;
     [SerializeField]
     private GameObject _player;
+    public float _playerSpeed = 2;
+    [SerializeField]
+    private GameObject _enemy;
+    public float _enemySpeed = 2;
     [SerializeField]
     private Text _progressText;
+    [SerializeField]
+    private GameObject _instructionsDisplay;
     [SerializeField]
     private GameObject _levelCompletedDisplay;
     [SerializeField]
@@ -43,6 +51,7 @@ public class LevelManager : MonoBehaviour
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
     private int _numInstantiatedHalls = 1;
 
+    [SerializeField]
     private bool _gameRunning;
 
     void Start()
@@ -53,20 +62,43 @@ public class LevelManager : MonoBehaviour
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
+<<<<<<< HEAD
 
         _gameRunning = true;
        
 
         _gameRunning = false;
 
+=======
+        //_gameRunning = false;
+        _enemy.GetComponent<Enemy>().SetSpeed(_enemySpeed);
+        _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
+        _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
+        _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
+        if (_autoMove)
+        {
+            _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text = 
+            "Remember the creature? Now, you're supposed to run away from it.\nSo, you will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
+        }
+        else
+        {
+            _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text = 
+            "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
+>>>>>>> master
 
+        }
     }
 
     void Update()
     {
         if (_gameRunning)
         {
-            PlayerMovement();
+            if (_autoMove)
+            {
+                //PlayerMovement();
+                _player.GetComponent<Player>().AutoMove();
+            }
+            _enemy.GetComponent<Enemy>().StartMoving();
             UpdateScore();
         }
         if (_activeHalls.Count > 2)
@@ -107,6 +139,9 @@ public class LevelManager : MonoBehaviour
             {
                 _currentHall.transform.Find("Corridor").Find("Front_Door").gameObject.SetActive(true);
             }
+            _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
+            _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
+            _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
         }
         else if (_numInstantiatedHalls >= levelLength &&
             Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 2)
@@ -118,6 +153,7 @@ public class LevelManager : MonoBehaviour
     public void Game_Start()
     {
         _gameRunning = true;
+        _instructionsDisplay.gameObject.SetActive(false);
     }
 
 
@@ -127,7 +163,7 @@ public class LevelManager : MonoBehaviour
         float speed = _player.GetComponent<Player>().GetSpeed();
         float movement = speed * Time.deltaTime;
         transform.Translate(direction * movement);
-        _player.GetComponent<Player>().AddProgress(movement);
+        //_player.GetComponent<Player>().AddProgress(movement);
 
     }
 
