@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     public bool letFall = false;
     //audio death source
     [SerializeField]
-    private AudioSource death1;
+    private AudioClip death1;
     //prefab for hallway
     [SerializeField]
     private GameObject _hallPrefab;
@@ -53,12 +53,12 @@ public class LevelManager : MonoBehaviour
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
-<<<<<<< HEAD
+
         _gameRunning = true;
        
-=======
+
         _gameRunning = false;
->>>>>>> master
+
 
     }
 
@@ -174,8 +174,10 @@ public class LevelManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (letFall && other.tag == ("death1")) {
-            death1.Play();
+      
+        if (letFall) {
+            //other.tag("death1").Play();
+            
         }
     }
     /**
