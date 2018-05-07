@@ -9,6 +9,14 @@ TagManager:
   - Obstacle
   - FurnitureSpawn
   - FireSpawn
+  - SpawnPoint
+  - Button2
+  - Button1
+  - Level1
+  - Level2
+  - Enemy
+  - ExcludeTeleport
+  - death1
   layers:
   - Default
   - TransparentFX
@@ -21,7 +29,7 @@ TagManager:
   - Environment
   - Obstacles
   - reward
-  - 
+  - Enemy
   - 
   - 
   - 

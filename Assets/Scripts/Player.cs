@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int lives;
 
     private float _progress = 0;
+    private Vector3 _lastPosition;
     private bool _collision = false;
     private float _height;
 
@@ -19,21 +20,56 @@ public class Player : MonoBehaviour
     {
         GetComponent<Rigidbody>().freezeRotation = true;
         GetComponent<Rigidbody>().centerOfMass = new Vector3(0.1f, 1, 0);
+        _height = _camera.transform.position.y;
+        _lastPosition = transform.position;
+        speed = _levelManager.GetComponent<LevelManager>()._playerSpeed;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (!collision)
         {
-            GetComponent<Rigidbody>().velocity = direction * speed;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                transform.Translate(Vector3.up * 5 * Time.deltaTime);
+            if (Input.GetKey("c"))
+            { // press C to crouch
+                transform.localScale = new Vector3(1, 0.5f, 1);
             }
-            //GetComponent<Rigidbody>().AddForce(direction * speed);
-            //transform.Translate(direction * speed * Time.deltaTime);
-            //progress += speed * Time.deltaTime;
+           // else if (_camera.transform.position.y < _height)
+            //{ // or use player height
+              //  transform.localScale = new Vector3(1, _camera.transform.position.y / _height, 1);
+            //}
+            else
+            {
+              transform.localScale = new Vector3(1, 1, 1);
+              transform.GetComponent<CapsuleCollider>().height = _camera.transform.position.y;
+            }
+            //Debug.Log(_camera.transform.position.y);
+            //AutoMove();
+            Vector3 newPos = transform.position;
+            AddProgress(Vector3.Distance(newPos, _lastPosition));
+            _lastPosition = newPos;
         }
+    }
+
+    public void AutoMove()
+    {
+        direction = _camera.transform.forward;
+        direction.y = 0;
+        Vector3 translate = direction * speed * Time.deltaTime;
+        //transform.Translate(translate);
+
+        //update position of everything under root parent, so motion tracking doesn't move
+        //anything away from parents
+        Transform[] allInTree = transform.root.GetComponentsInChildren<Transform>();
+        Vector3[] positions = new Vector3[allInTree.Length];
+        for (int i = 0; i < allInTree.Length; i++)
+        {
+            positions[i] = allInTree[i].position;
+        }
+        for (int i = 0; i < allInTree.Length; i++)
+        {
+            allInTree[i].position = positions[i] + translate;
+        }
+
     }
 
     public Vector3 GetHorizontalDirection()
@@ -63,34 +99,10 @@ public class Player : MonoBehaviour
         _progress = val;
     }
 
-    private void AutoMove()
-    {
-        direction = _camera.transform.forward;
-        direction.y = 0;
-        Vector3 startPos = transform.position;
-        Vector3 translate = direction * speed * Time.deltaTime;
-        //transform.Translate(translate);
-
-        //update position of everything under root parent, so motion tracking doesn't move
-        //anything away from parents
-        Transform[] allInTree = transform.root.GetComponentsInChildren<Transform>();
-        Vector3[] positions = new Vector3[allInTree.Length];
-        for (int i = 0; i < allInTree.Length; i++)
-        {
-            positions[i] = allInTree[i].position;
-        }
-        for (int i = 0; i < allInTree.Length; i++)
-        {
-            allInTree[i].position = positions[i] + translate;
-        }
-        Vector3 endPos = transform.position;
-        _progress += Vector3.Distance(endPos, startPos);
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Obstacle")
+        if (other.tag == "Obstacle" || other.tag == "Enemy")
         {
             lives--;
             if (lives < 1)
