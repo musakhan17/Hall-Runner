@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.3
+  m_FogDensity: 0.5
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.41782007, g: 0.5003681, b: 0.6764706, a: 1}
@@ -5355,18 +5355,24 @@ MonoBehaviour:
   spawnDist: 10
   levelLength: 2
   letFall: 1
+  _autoMove: 0
   death1: {fileID: 0}
   _hallPrefab: {fileID: 1999570003980130, guid: b75ff472e593f664bb4756f24a058e8e,
     type: 2}
   _currentHall: {fileID: 323694964}
   _player: {fileID: 1147268405}
+  _playerSpeed: 2
+  _enemy: {fileID: 0}
+  _enemySpeed: 2
   _progressText: {fileID: 1574384597}
+  _instructionsDisplay: {fileID: 0}
   _levelCompletedDisplay: {fileID: 1078264289}
   _levelFailedDisplay: {fileID: 1993869781}
   _fireFrequency: 0.5
   _furnitureFrequency: 0.6
   _furnitureIsObstacleFrequency: 0.8
   _obstacleTriggerDistance: 8
+  _gameRunning: 0
 --- !u!4 &667958789
 Transform:
   m_ObjectHideFlags: 0
@@ -6217,6 +6223,7 @@ MonoBehaviour:
   _levelManager: {fileID: 667958787}
   _camera: {fileID: 1014769441}
   direction: {x: 0, y: 0, z: 1}
+  lives: 0
 --- !u!54 &773809050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6761,6 +6768,7 @@ MonoBehaviour:
   _levelManager: {fileID: 0}
   _camera: {fileID: 0}
   direction: {x: 0, y: 0, z: 1}
+  lives: 0
 --- !u!1 &870706517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,6 +9683,7 @@ MonoBehaviour:
   _levelManager: {fileID: 667958787}
   _camera: {fileID: 541562055}
   direction: {x: 0, y: 0, z: 1}
+  lives: 0
 --- !u!1 &1159178513
 GameObject:
   m_ObjectHideFlags: 0

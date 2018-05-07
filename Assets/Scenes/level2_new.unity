@@ -4157,7 +4157,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8cd4c4959001b4d36b07f08de2d54187, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 38190862124cd4489bbb63069a5db36e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11362,6 +11362,11 @@ Prefab:
       propertyPath: m_Name
       value: StartHallway
       objectReference: {fileID: 0}
+    - target: {fileID: 23786968496420466, guid: b75ff472e593f664bb4756f24a058e8e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31b4461362e304b86a2981df71d6b589, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
   m_IsPrefabParent: 0
