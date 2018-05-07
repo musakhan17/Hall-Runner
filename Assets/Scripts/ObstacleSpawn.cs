@@ -7,9 +7,9 @@ public class ObstacleSpawn : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject[] _obstacles;
+    private GameObject[] _furnitureObstacles;
     [SerializeField]
-    private GameObject _fire;
+    private GameObject[] _floatingObstacles;
     [SerializeField]
     private float _fireFrequency = 0.05f; //chance of spawning fire @ a spawn point
     [SerializeField]
@@ -51,9 +51,9 @@ public class ObstacleSpawn : MonoBehaviour
             if (Random.Range(0f, 1f) < _furnitureFrequency)
             {
                 //get random obstable
-                int index = Random.Range(0, _obstacles.Length);
+                int index = Random.Range(0, _furnitureObstacles.Length);
                 //Debug.Log(index);
-                GameObject obstacle = _obstacles[index];
+                GameObject obstacle = _furnitureObstacles[index];
 
                 //pick side of hallway to spawn on
                 Transform[] points = location.GetComponentsInChildren<Transform>();
@@ -71,7 +71,7 @@ public class ObstacleSpawn : MonoBehaviour
                 hallObstacle.triggerDistance = _obstacleTriggerDistance;
                 if (hallObstacle != null)
                 {
-                    hallObstacle.isObstacle = Random.Range(0f, 1f) < _furnitureIsObstacleFrequency
+                    hallObstacle.isObstacle = Random.Range(0f, 1f) <= _furnitureIsObstacleFrequency
                                               ? true : false;
                 }
             }
@@ -80,7 +80,7 @@ public class ObstacleSpawn : MonoBehaviour
         //generate fire obstacles
         foreach (GameObject location in _fireSpawnPoints)
         {
-            if (Random.Range(0f, 1f) < _fireFrequency)
+            if (Random.Range(0f, 1f) <= _fireFrequency)
             {
                 //pick side of hallway to spawn on
                 Transform[] points = location.GetComponentsInChildren<Transform>();
@@ -88,10 +88,9 @@ public class ObstacleSpawn : MonoBehaviour
                 Transform spawnPoint = points[Random.Range(0, points.Length)];
 
                 //instantiate
-                GameObject newObject = Instantiate(_fire,
-                                                     spawnPoint.position,
-                                                     Quaternion.identity
-                                                    );
+                GameObject newObject =
+                        Instantiate(_floatingObstacles[Random.Range(0, _furnitureObstacles.Length)],
+                                    spawnPoint.position, spawnPoint.parent.rotation);
                 newObject.transform.parent = gameObject.transform;
             }
         }
