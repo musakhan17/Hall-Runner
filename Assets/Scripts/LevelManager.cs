@@ -62,7 +62,19 @@ public class LevelManager : MonoBehaviour
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
+<<<<<<< Updated upstream
         _gameRunning = false;
+=======
+
+
+        _gameRunning = true;
+       
+
+        _gameRunning = false;
+
+
+        //_gameRunning = false;
+>>>>>>> Stashed changes
         _enemy.GetComponent<Enemy>().SetSpeed(_enemySpeed);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
@@ -76,6 +88,11 @@ public class LevelManager : MonoBehaviour
         {
             _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text = 
             "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
         }
     }
 
