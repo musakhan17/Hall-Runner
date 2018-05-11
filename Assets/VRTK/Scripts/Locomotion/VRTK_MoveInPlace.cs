@@ -233,6 +233,8 @@ namespace VRTK
                 direction = SetDirection();
                 // Update our current speed.
                 currentSpeed = speed;
+
+                GetComponent<AudioSource>().Play();
             }
             else if (currentSpeed > 0f)
             {
