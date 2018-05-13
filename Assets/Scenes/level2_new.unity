@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.2
+  m_FogDensity: 0.5
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.41782007, g: 0.5003681, b: 0.6764706, a: 1}
@@ -1357,7 +1357,7 @@ Prefab:
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -1928,7 +1928,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242726966
 GameObject:
@@ -3891,7 +3891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623677969
 GameObject:
@@ -4116,7 +4116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDist: 10
   levelLength: 3
-  letFall: 0
+  letFall: 1
   _autoMove: 0
   death1: {fileID: 0}
   _hallPrefab: {fileID: 1999570003980130, guid: b75ff472e593f664bb4756f24a058e8e,
@@ -4124,7 +4124,7 @@ MonoBehaviour:
   _currentHall: {fileID: 57844104}
   _player: {fileID: 773809045}
   _playerSpeed: 2.5
-  _enemy: {fileID: 1223843982}
+  _enemy: {fileID: 0}
   _enemySpeed: 3
   _progressText: {fileID: 854903185}
   _instructionsDisplay: {fileID: 0}
@@ -4146,7 +4146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &667958790
 AudioSource:
@@ -4315,7 +4315,7 @@ Transform:
   m_Children:
   - {fileID: 13171447}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &738814951
 AudioSource:
@@ -6172,7 +6172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 47.072002, y: -36.093002, z: -5.19}
 --- !u!1 &1072123330
 GameObject:
@@ -7187,11 +7187,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e4490b7c8c41be44befe64020e00c14, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1223843982 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1260760947907838, guid: 8f221485706616545b5397ea8018686a,
-    type: 2}
-  m_PrefabInternal: {fileID: 143905548}
 --- !u!1 &1270550909
 GameObject:
   m_ObjectHideFlags: 0
@@ -8108,7 +8103,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431700678
 GameObject:
@@ -8880,7 +8875,7 @@ RectTransform:
   - {fileID: 1569148843}
   - {fileID: 1886457701}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
