@@ -36778,6 +36778,7 @@ MonoBehaviour:
   _furnitureObstacles:
   - {fileID: 1767685590116220, guid: 2e4490b7c8c41be44befe64020e00c14, type: 2}
   - {fileID: 1512419476674420, guid: f9c3d731dfea7ea4db3560dfea30de5e, type: 2}
+  - {fileID: 1705818831550382, guid: 9c936999900feda4aa4576c56ebfa240, type: 2}
   _floatingObstacles:
   - {fileID: 1900293894425806, guid: e65deb6e2fa983a4ca565fa804888f7f, type: 2}
   - {fileID: 1697987229466266, guid: 480297a1c541eb6499844b4880f1ba9f, type: 2}
