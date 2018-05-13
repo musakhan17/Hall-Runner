@@ -353,9 +353,10 @@ Animation:
   m_GameObject: {fileID: 1600362084617980}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 887205e4e84cfd8478b4846ce2ab7a6e, type: 3}
+  m_Animation: {fileID: 7400000, guid: a485e8c86b01e2a4ea8f3a13d844a901, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 887205e4e84cfd8478b4846ce2ab7a6e, type: 3}
+  - {fileID: 7400000, guid: a485e8c86b01e2a4ea8f3a13d844a901, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerDistance: 7
   player: {fileID: 0}
-  isObstacle: 0
+  isObstacle: 1
   _riseSpeed: 10
   _turnSpeed: 300
   _riseHeight: 2

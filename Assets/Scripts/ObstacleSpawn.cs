@@ -48,7 +48,7 @@ public class ObstacleSpawn : MonoBehaviour
 
         foreach (GameObject location in _furnitureSpawnPoints)
         {
-            if (Random.Range(0f, 1f) < _furnitureFrequency)
+            if (Random.Range(0f, 1f) <= _furnitureFrequency)
             {
                 //get random obstable
                 int index = Random.Range(0, _furnitureObstacles.Length);

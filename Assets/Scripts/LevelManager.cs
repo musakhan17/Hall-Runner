@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
     public bool letFall = false;
     [SerializeField]
     private bool _autoMove = false;
+    //display instructions at start of level
+    public bool instructions = false;
     //audio death source
     [SerializeField]
     private AudioClip death1;
@@ -62,31 +64,30 @@ public class LevelManager : MonoBehaviour
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
-<<<<<<< Updated upstream
-        _gameRunning = false;
-=======
 
+        if (instructions)
+        {
+            _gameRunning = false;
+            _instructionsDisplay.gameObject.SetActive(true);
+            _progressText.gameObject.SetActive(true);
+        }
+        else
+        {
+            Game_Start();
+        }
 
-        _gameRunning = true;
-       
-
-        _gameRunning = false;
-
-
-        //_gameRunning = false;
->>>>>>> Stashed changes
         _enemy.GetComponent<Enemy>().SetSpeed(_enemySpeed);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
         if (_autoMove && _instructionsDisplay != null)
         {
-            _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text = 
+            _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text =
             "Remember the creature? Now, you're supposed to run away from it.\nSo, you will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
         }
         else if (_instructionsDisplay != null)
         {
-            _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text = 
+            _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text =
             "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
 <<<<<<< Updated upstream
 =======
@@ -161,6 +162,7 @@ public class LevelManager : MonoBehaviour
     {
         _gameRunning = true;
         _instructionsDisplay.gameObject.SetActive(false);
+        _progressText.gameObject.SetActive(true);
     }
 
 
@@ -205,7 +207,7 @@ public class LevelManager : MonoBehaviour
             _levelFailedDisplay.gameObject.SetActive(true);
             yield return new WaitForSeconds(2f);
             Time.timeScale = 0;
-           // death1.Play();
+            // death1.Play();
 
         }
         else
@@ -217,10 +219,11 @@ public class LevelManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-      
-        if (letFall) {
+
+        if (letFall)
+        {
             //other.tag("death1").Play();
-            
+
         }
     }
     /**
