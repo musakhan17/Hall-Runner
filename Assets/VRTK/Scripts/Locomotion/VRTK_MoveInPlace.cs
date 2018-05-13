@@ -225,6 +225,13 @@ namespace VRTK
         {
             HandleFalling();
             // If Move In Place is currently engaged.
+
+            if (!MovementActivated())
+            {
+                GetComponent<AudioSource>().Play();
+            }
+            
+
             if (MovementActivated() && !currentlyFalling)
             {
                 // Initialize the list average.
@@ -233,6 +240,8 @@ namespace VRTK
                 direction = SetDirection();
                 // Update our current speed.
                 currentSpeed = speed;
+                
+                //GetComponent<AudioSource>().Play();
             }
             else if (currentSpeed > 0f)
             {
