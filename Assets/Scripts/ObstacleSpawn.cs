@@ -89,7 +89,7 @@ public class ObstacleSpawn : MonoBehaviour
 
                 //instantiate
                 GameObject newObject =
-                        Instantiate(_floatingObstacles[Random.Range(0, _furnitureObstacles.Length)],
+                        Instantiate(_floatingObstacles[Random.Range(0, _floatingObstacles.Length)],
                                     spawnPoint.position, spawnPoint.parent.rotation);
                 newObject.transform.parent = gameObject.transform;
             }
