@@ -2896,10 +2896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94250b2d1ba673438c16791d4288097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacles:
-  - {fileID: 1767685590116220, guid: 2e4490b7c8c41be44befe64020e00c14, type: 2}
-  - {fileID: 1512419476674420, guid: f9c3d731dfea7ea4db3560dfea30de5e, type: 2}
-  _fire: {fileID: 1965172163217082, guid: 448eccf486d20ac4ea80d9482ca0620a, type: 2}
+  _furnitureObstacles: []
+  _floatingObstacles: []
   _fireFrequency: 0.5
   _furnitureFrequency: 0.6
   _furnitureIsObstacleFrequency: 0.8
@@ -3158,7 +3156,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -5466,6 +5464,7 @@ MonoBehaviour:
   levelLength: 2
   letFall: 1
   _autoMove: 0
+  instructions: 0
   death1: {fileID: 0}
   _hallPrefab: {fileID: 1999570003980130, guid: b75ff472e593f664bb4756f24a058e8e,
     type: 2}
