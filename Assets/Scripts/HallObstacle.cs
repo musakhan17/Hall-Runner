@@ -40,20 +40,6 @@ public class HallObstacle : MonoBehaviour
     /* makes per-frame move update, returns if move is done */
     public virtual bool Move()
     {
-        /*
-        while (Mathf.Abs(transform.eulerAngles.x) < 90)
-        {
-            GetComponent<Rigidbody>().AddForceAtPosition(transform.forward * 90,
-                                                         new Vector3(transform.position.x,
-                                                                     2,
-                                                                     transform.position.z));
-            yield return null;
-        }
-        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().AddForce(Vector3.down * 1000);
-        _moveStarted = true;
-        */
         return true;
     }
 
