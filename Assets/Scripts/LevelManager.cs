@@ -81,6 +81,7 @@ public class LevelManager : MonoBehaviour
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
+        /*
         if (_autoMove && _instructionsDisplay != null)
         {
             _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text =
@@ -91,6 +92,7 @@ public class LevelManager : MonoBehaviour
             _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text =
             "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
         }
+        */
     }
 
     void Update()
