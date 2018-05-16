@@ -862,6 +862,7 @@ GameObject:
   - component: {fileID: 71041795}
   - component: {fileID: 71041798}
   - component: {fileID: 71041797}
+  - component: {fileID: 71041799}
   - component: {fileID: 71041796}
   m_Layer: 0
   m_Name: Camera (eye)
@@ -887,8 +888,7 @@ Transform:
 --- !u!114 &71041796
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000012849300506, guid: 41c0760bd81dd084283814f0c432b466,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 71041794}
   m_Enabled: 1
@@ -944,6 +944,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &71041799
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71041794}
+  m_Enabled: 1
 --- !u!1 &87292047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430096101}
   - component: {fileID: 430096102}
+  - component: {fileID: 430096103}
   m_Layer: 0
   m_Name: DoorSound
   m_TagString: Untagged
@@ -3256,6 +3264,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &430096103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 430096100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449a9034b3ff51b48a0725f61fbf60be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &434363317
 GameObject:
   m_ObjectHideFlags: 0
@@ -9581,6 +9600,7 @@ GameObject:
   - component: {fileID: 1329656369}
   - component: {fileID: 1329656368}
   - component: {fileID: 1329656367}
+  - component: {fileID: 1329656370}
   m_Layer: 0
   m_Name: '[VRTK_SDKManager]'
   m_TagString: Untagged
@@ -9655,7 +9675,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -9708,6 +9728,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1329656370
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329656366}
+  m_Enabled: 1
 --- !u!1 &1379528822
 GameObject:
   m_ObjectHideFlags: 0
