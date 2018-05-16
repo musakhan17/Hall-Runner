@@ -30,7 +30,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!_collision)
+        if (! _levelManager.GetComponent<LevelManager>()._gameRunning)
+        {
+            transform.position = _lastPosition;
+        }
+        else if (!_collision)
         {
             if (Input.GetKey("c"))
             { // press C to crouch
