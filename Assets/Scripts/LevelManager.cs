@@ -70,7 +70,7 @@ public class LevelManager : MonoBehaviour
         {
             _gameRunning = false;
             _instructionsDisplay.gameObject.SetActive(true);
-            _progressText.gameObject.SetActive(true);
+            _progressText.gameObject.SetActive(false);
         }
         else
         {
