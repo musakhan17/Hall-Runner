@@ -230,6 +230,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0d84ef1d9c024b4e86b409153715f4f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &78122590 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1309743127035160, guid: f0d84ef1d9c024b4e86b409153715f4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 78122589}
 --- !u!1001 &143905548
 Prefab:
   m_ObjectHideFlags: 0
@@ -240,6 +245,10 @@ Prefab:
     - target: {fileID: 4730908475060894, guid: 8f221485706616545b5397ea8018686a, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152259116584068, guid: 8f221485706616545b5397ea8018686a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f221485706616545b5397ea8018686a, type: 2}
@@ -792,7 +801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &284102174
 Transform:
   m_ObjectHideFlags: 0
@@ -1219,7 +1228,7 @@ MonoBehaviour:
   _hallPrefab: {fileID: 1999570003980130, guid: b75ff472e593f664bb4756f24a058e8e,
     type: 2}
   _currentHall: {fileID: 1033226576}
-  _player: {fileID: 917523378}
+  _player: {fileID: 78122590}
   _playerSpeed: 2.5
   _enemy: {fileID: 1984491554}
   _enemySpeed: 2
@@ -1595,6 +1604,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 143905549}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 284102173}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

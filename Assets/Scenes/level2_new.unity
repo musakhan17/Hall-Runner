@@ -927,7 +927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &284102174
 Transform:
   m_ObjectHideFlags: 0
@@ -3298,9 +3298,30 @@ Prefab:
       propertyPath: m_Name
       value: StartHallway
       objectReference: {fileID: 0}
+    - target: {fileID: 4451625655211396, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451625655211396, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451625655211396, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1761133120773292, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b75ff472e593f664bb4756f24a058e8e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2125210970 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1761133120773292, guid: b75ff472e593f664bb4756f24a058e8e,
+    type: 2}
+  m_PrefabInternal: {fileID: 2125210969}
 --- !u!1 &2130219863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,6 +3421,28 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 143905549}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2125210970}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 284102173}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
