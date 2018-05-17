@@ -17,4 +17,9 @@ public static class SceneLoader
     {
         return _progress;
     }
+
+    public static void ResetProgress()
+    {
+        _progress = 0;
+    }
 }

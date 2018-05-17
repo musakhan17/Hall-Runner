@@ -41,6 +41,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _levelFailedDisplay;
     [SerializeField]
+    private GameObject _pauseDisplay;
+    [SerializeField]
     private float _fireFrequency = 0.5f; //chance of spawning fire @ a spawn point
     [SerializeField]
     private float _furnitureFrequency = 0.5f; //chance of spawning an object @ a spawn point
@@ -49,12 +51,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private float _obstacleTriggerDistance = 8f; //chance an object will become an obstacle
     private Transform _currentHallEnd;
-
     private Queue<GameObject> _activeHalls = new Queue<GameObject>();
     private int _numInstantiatedHalls = 1;
 
-    [SerializeField]
-    private bool _gameRunning;
+    public bool _gameRunning;
+    private bool _done = false;
 
     void Start()
     {
@@ -69,7 +70,7 @@ public class LevelManager : MonoBehaviour
         {
             _gameRunning = false;
             _instructionsDisplay.gameObject.SetActive(true);
-            _progressText.gameObject.SetActive(true);
+            _progressText.gameObject.SetActive(false);
         }
         else
         {
@@ -80,6 +81,7 @@ public class LevelManager : MonoBehaviour
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint1").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint2").position);
         _enemy.GetComponent<Enemy>().AddWayPoint(_currentHall.transform.Find("WayPoint3").position);
+        /*
         if (_autoMove && _instructionsDisplay != null)
         {
             _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text =
@@ -88,8 +90,9 @@ public class LevelManager : MonoBehaviour
         else if (_instructionsDisplay != null)
         {
             _instructionsDisplay.transform.Find("InstructionText").GetComponent<Text>().text =
-            "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will be move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
+            "Remember the creature? Now, you're supposed to run away from it.\n Hold the touchpad and move your arms up and down to move.\nYou will move towards where you look.\nYou need to dodge any object that comes in your way\nDo not be scared, but don't think you won't get scared... \n\nPress Start to begin.";
         }
+        */
     }
 
     void Update()
@@ -182,6 +185,7 @@ public class LevelManager : MonoBehaviour
     private void EndLevel()
     {
         Time.timeScale = 0;
+        _done = true;
         _levelCompletedDisplay.gameObject.SetActive(true);
     }
 
@@ -191,6 +195,7 @@ public class LevelManager : MonoBehaviour
     public void FailLevel()
     {
         _gameRunning = false;
+        _done = true;
         StartCoroutine("FailRoutine");
     }
 
@@ -221,6 +226,24 @@ public class LevelManager : MonoBehaviour
 
         }
     }
+
+    public void Pause()
+    {
+        _pauseDisplay.gameObject.SetActive(true);
+        Time.timeScale = 0;
+        _gameRunning = false;
+    }
+
+    public void Resume()
+    {
+        _pauseDisplay.gameObject.SetActive(false);
+        if (!_done)
+        {
+            Time.timeScale = 1;
+            _gameRunning = true;
+        }
+    }
+
     /**
     load next level - called on click by button
      */
@@ -234,6 +257,12 @@ public class LevelManager : MonoBehaviour
      */
     public void Restart()
     {
+        _pauseDisplay.gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit()
+    {
+        SceneLoader.LoadScene("_starter", 0);
     }
 }
