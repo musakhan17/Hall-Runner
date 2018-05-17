@@ -2001,11 +2001,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &917523378 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1526021705239970, guid: f0d84ef1d9c024b4e86b409153715f4f,
-    type: 2}
-  m_PrefabInternal: {fileID: 78122589}
 --- !u!114 &942027130 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114285254389849840, guid: 1c1bea2fe9043e74a9ccc54369e11453,
