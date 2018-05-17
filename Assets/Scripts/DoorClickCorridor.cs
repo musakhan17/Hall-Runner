@@ -50,5 +50,5 @@ public class DoorClickCorridor : MonoBehaviour {
             //Change to true to show that there was just a change in the toggle state
             m_ToggleChange = true;
         }
-    }
+    }       
 }
