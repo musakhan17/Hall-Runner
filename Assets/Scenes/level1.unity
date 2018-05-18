@@ -1982,6 +1982,24 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114957332647187494, guid: 1c1bea2fe9043e74a9ccc54369e11453,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Remember the creature? Now, you''re supposed to run away from it.
+
+        Hold the touchpad and move your arms up and down to move.
+
+        You will move towards where you look.
+
+        You need to dodge any object that comes in your way,
+
+        and don''t let the creature catch up with you.
+
+        Do not be scared, but don''t think you won''t get scared...
+
+
+        Press Start to begin.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c1bea2fe9043e74a9ccc54369e11453, type: 2}
   m_IsPrefabParent: 0
