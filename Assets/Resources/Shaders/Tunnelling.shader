@@ -70,7 +70,7 @@
 				#if TUNNEL_SKYBOX
 				fixed4 effect = fixed4(sampleSkybox(coords),0);
 				#else
-				fixed4 effect = fixed4(1,0,0,0);
+				fixed4 effect = fixed4(0,0,0,0);
 				#endif
 
 				return lerp(col, effect, t);

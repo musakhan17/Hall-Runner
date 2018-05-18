@@ -16984,7 +16984,7 @@ GameObject:
   - component: {fileID: 4536362556752616}
   - component: {fileID: 114884232297263612}
   m_Layer: 0
-  m_Name: Hallway
+  m_Name: HallwayLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

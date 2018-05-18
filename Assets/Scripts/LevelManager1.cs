@@ -14,19 +14,42 @@ public class LevelManager1 : MonoBehaviour
     private GameObject _player;
     [SerializeField]
     private GameObject Continue_Display;
- 
+    [SerializeField]
+    private GameObject Look_Around_Display;
+    [SerializeField]
+    private GameObject Run_Away_Display;
+    [SerializeField]
+    private GameObject PlayArea;
+
     private Transform _currentHallEnd;
+    private bool _beginningDone = false;
 
     void Start()
     {
         Time.timeScale = 1;
         _currentHallEnd = _currentHall.transform.Find("End");
+        Look_Around_Display.SetActive(true);
+        PlayArea.SetActive(false);
 
     }
 
     void Update()
     {
-        if (Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 1.5)
+        if (!_beginningDone)
+        {
+            Quaternion rotation = _player.transform.rotation;
+            Debug.Log(rotation);
+            if (rotation.y < -0.8 || rotation.y > 0.8)
+            {
+                Look_Around_Display.SetActive(false);
+                Run_Away_Display.SetActive(true);
+                _beginningDone = true;
+                PlayArea.SetActive(true);
+                StartCoroutine("HideRunDisplay");
+            }
+        }
+
+        if (Vector3.Distance(_player.transform.position, _currentHallEnd.position) <= 3)
         {
             EndLevel();
         }
@@ -47,6 +70,12 @@ public class LevelManager1 : MonoBehaviour
     public void Continue(string levelName)
     {
         SceneManager.LoadScene(levelName);
+    }
+
+    private IEnumerator HideRunDisplay()
+    {
+        yield return new WaitForSeconds(3f);
+        Run_Away_Display.SetActive(false);
     }
 
 

@@ -412,7 +412,13 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -8.13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 82594711986629888, guid: 8f221485706616545b5397ea8018686a,
+        type: 2}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 82594711986629888, guid: 8f221485706616545b5397ea8018686a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8f221485706616545b5397ea8018686a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &143905549 stripped
@@ -1131,6 +1137,7 @@ MonoBehaviour:
   _furnitureIsObstacleFrequency: 1
   _obstacleTriggerDistance: 6
   _gameRunning: 0
+  _camera: {fileID: 902415499}
 --- !u!4 &667958789
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,7 +1239,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 676802499}
-  - component: {fileID: 676802498}
   - component: {fileID: 676802497}
   - component: {fileID: 676802496}
   - component: {fileID: 676802495}
@@ -1378,25 +1384,6 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
---- !u!114 &676802498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 676802493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018581a6a9040b34d83404b882e892a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  deviceForDirection: 0
-  disableOtherControlsOnActive: 1
-  affectOnFalling: 0
-  controlOverrideObject: {fileID: 0}
-  primaryActivationButton: 9
-  actionModifierButton: 10
-  axisDeadzone: {x: 0.15, y: 0.15}
 --- !u!4 &676802499
 Transform:
   m_ObjectHideFlags: 0
@@ -1572,9 +1559,29 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114186792396708080, guid: f0d84ef1d9c024b4e86b409153715f4f,
+        type: 2}
+      propertyPath: refTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114186792396708080, guid: f0d84ef1d9c024b4e86b409153715f4f,
+        type: 2}
+      propertyPath: maxAngVel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114186792396708080, guid: f0d84ef1d9c024b4e86b409153715f4f,
+        type: 2}
+      propertyPath: feather
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0d84ef1d9c024b4e86b409153715f4f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &902415499 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1419611497003126, guid: f0d84ef1d9c024b4e86b409153715f4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 902415498}
 --- !u!1 &902415504 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1309743127035160, guid: f0d84ef1d9c024b4e86b409153715f4f,
@@ -2357,7 +2364,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2077334257}
-  - component: {fileID: 2077334262}
   - component: {fileID: 2077334261}
   - component: {fileID: 2077334260}
   - component: {fileID: 2077334259}
@@ -2516,25 +2522,6 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
---- !u!114 &2077334262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2077334256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018581a6a9040b34d83404b882e892a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  deviceForDirection: 0
-  disableOtherControlsOnActive: 1
-  affectOnFalling: 0
-  controlOverrideObject: {fileID: 0}
-  primaryActivationButton: 9
-  actionModifierButton: 10
-  axisDeadzone: {x: 0.15, y: 0.15}
 --- !u!1001 &2125210969
 Prefab:
   m_ObjectHideFlags: 0

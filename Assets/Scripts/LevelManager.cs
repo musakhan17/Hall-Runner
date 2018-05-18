@@ -55,6 +55,8 @@ public class LevelManager : MonoBehaviour
     private int _numInstantiatedHalls = 1;
 
     public bool _gameRunning;
+    [SerializeField]
+    private GameObject _camera;
     private bool _done = false;
 
     void Start()
@@ -65,7 +67,6 @@ public class LevelManager : MonoBehaviour
         _activeHalls.Enqueue(_currentHall);
         _currentHall.GetComponent<ObstacleSpawn>().Init(_fireFrequency, _furnitureFrequency, _furnitureIsObstacleFrequency, _obstacleTriggerDistance);
         _currentHall.transform.SetParent(transform);
-
         if (instructions)
         {
             _gameRunning = false;
@@ -231,12 +232,14 @@ public class LevelManager : MonoBehaviour
     {
         _pauseDisplay.gameObject.SetActive(true);
         Time.timeScale = 0;
+        _camera.GetComponent<Sigtrap.ImageEffects.Tunnelling>().enabled = false;
         _gameRunning = false;
     }
 
     public void Resume()
     {
         _pauseDisplay.gameObject.SetActive(false);
+        _camera.GetComponent<Sigtrap.ImageEffects.Tunnelling>().enabled = true;
         if (!_done)
         {
             Time.timeScale = 1;
